@@ -161,8 +161,12 @@ body {
   align-items: center;
   justify-items: center;
   justify-content: center;
-  
-  gap: 30px max(10px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+
+  gap: 30px
+    max(
+      10px,
+      min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px)
+    );
 
   position: relative;
   align-self: stretch;
@@ -181,7 +185,7 @@ body {
 .home .highlight-text {
   position: relative;
   align-self: stretch;
-  margin-top: -1.00px;
+  margin-top: -1px;
   font-family: "Josefin Sans", Helvetica;
   font-weight: 400;
   color: var(--texto-primario);
@@ -284,7 +288,7 @@ body {
   min-width: 350px;
   max-width: 1400px;
   flex-direction: column;
-  
+
   align-items: center;
   align-content: center;
 
@@ -446,9 +450,14 @@ body {
   align-items: center;
   justify-content: left;
 
-  padding: 0px min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
+  padding: 0px
+    min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
 
-  gap: 30px max(10px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+  gap: 30px
+    max(
+      10px,
+      min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px)
+    );
 
   position: relative;
 }
@@ -460,9 +469,14 @@ body {
   align-items: center;
   justify-content: left;
 
-  padding: 0px min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
+  padding: 0px
+    min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
 
-  gap: 30px max(16px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+  gap: 30px
+    max(
+      16px,
+      min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px)
+    );
 
   position: relative;
 }
@@ -615,7 +629,7 @@ body {
 .old-currency-symbol {
   position: relative;
   width: fit-content;
-  margin-top: -1.00px;
+  margin-top: -1px;
   font-family: "Mulish-Bold", Helvetica;
   font-weight: 700;
   color: var(--texto-primario);
@@ -628,7 +642,7 @@ body {
 .old-price-value {
   position: relative;
   width: fit-content;
-  margin-top: -1.00px;
+  margin-top: -1px;
   font-family: "Mulish-Bold", Helvetica;
   font-weight: 700;
   color: var(--texto-primario);
@@ -640,7 +654,7 @@ body {
 }
 
 .currency-symbol {
-  margin-top: -0.50px;
+  margin-top: -0.5px;
   position: relative;
   width: fit-content;
   font-family: "Mulish-Bold", Helvetica;
@@ -656,7 +670,7 @@ body {
   font-size: 17px;
   position: relative;
   width: fit-content;
-  margin-top: -1.00px;
+  margin-top: -1px;
   font-family: "Mulish-Bold", Helvetica;
   font-weight: 700;
   color: var(--texto-preco);
@@ -680,7 +694,7 @@ body {
 .full-menu-link-2 {
   position: relative;
   width: fit-content;
-  margin-top: -1.00px;
+  margin-top: -1px;
   font-family: "Josefin Sans", Helvetica;
   font-weight: 500;
   color: var(--texto-primario-invertido);
@@ -729,22 +743,22 @@ body {
   display: none;
   position: fixed;
   z-index: 1000;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.85);
   justify-content: center;
   align-items: center;
-  
 }
 
 .lightbox-image {
-width: auto;
-height: 100%;
-max-height: 630px;
-object-fit: contain;
-border-radius: 10px;
-box-shadow: 0 0 20px #000;
+  width: auto;
+  height: 100%;
+  max-height: 630px;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000;
 }
 
 .close-btn {
@@ -765,10 +779,15 @@ box-shadow: 0 0 20px #000;
   .home .about-section {
     width: 100%;
     padding: 0px 40px;
-    padding: 26px min(max((100% - 820px - max((100% - 108px) / 2, 208px)) / 2, 40px));
+    padding: 26px
+      min(max((100% - 820px - max((100% - 108px) / 2, 208px)) / 2, 40px));
   }
   .home .about-content {
-    gap: 30px max(22px, min((100vw - 100% - max(38px, calc((100vw - 100%) / 2))) / 2, 38px));
+    gap: 30px
+      max(
+        22px,
+        min((100vw - 100% - max(38px, calc((100vw - 100%) / 2))) / 2, 38px)
+      );
   }
   .home .about-text {
     max-width: 412px;
@@ -777,7 +796,7 @@ box-shadow: 0 0 20px #000;
   .home .hours-box {
     max-width: 412px;
     min-width: 332px;
-  }  
+  }
   .menu-item {
     max-width: 412px;
     min-width: 332px;
@@ -788,25 +807,34 @@ box-shadow: 0 0 20px #000;
     min-width: 766px;
     width: calc(100% - 80px);
   }
-  
+
   .cardapio .menu-section-1 {
     max-width: 918px;
     min-width: 682px;
     width: calc(100% - 80px);
     padding: 0px;
   }
-  
+
   .home .menu-items {
-    gap: 30px max(22px, min((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 38px));
-  } 
-  
+    gap: 30px
+      max(
+        22px,
+        min((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 38px)
+      );
+  }
+
   .cardapio .menu-items {
-    padding: 0px min(max((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 0px)); 
+    padding: 0px
+      min(max((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 0px));
 
-    padding: 0px min(max((100% - 712px - max((100% - 712px) / 2, 30px)) / 2, 0px));
+    padding: 0px
+      min(max((100% - 712px - max((100% - 712px) / 2, 30px)) / 2, 0px));
 
-    gap: 20px max(16px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
-
+    gap: 20px
+      max(
+        16px,
+        min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px)
+      );
   }
 
   .menu-image {
@@ -815,7 +843,8 @@ box-shadow: 0 0 20px #000;
     max-width: 90px;
   }
   .footer {
-    padding: 26px min(max((100% - 820px - max((100% - 820px) / 2, 30px)) / 2, 0px));
+    padding: 26px
+      min(max((100% - 820px - max((100% - 820px) / 2, 30px)) / 2, 0px));
   }
   .footer-image {
     width: calc(100% - 80px);
@@ -825,5 +854,75 @@ box-shadow: 0 0 20px #000;
 }
 
 @media screen and (max-width: 765px) {
+  .home .about-section {
+    flex-direction: column;
+    width: 100%;
+  }
+  .home .about-content {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+  .home .about-text {
+    height: auto;
+    width: 325px;
+  }
+  .home .hours-box {
+    height: 420px;
+    width: 325px;
+  }
+  .home .menu-items {
+    width: 325px;
+  }
+  .home .menu-item {
+    width: 325px;
+  }
+  .menu-image {
+    min-width: 80px;
+    max-width: 80px;
+    min-height: 130px;
+  }
 
+  .footer-image {
+    width: 325px;
+  }
+  .footer-text {
+    font-size: 17px;
+  }
+
+  .home .menu-section {
+    width: 350px;
+    gap: 14px;
+  }
+
+  .home .menu-subtitle {
+    font-size: 22px;
+  }
+
+  .cardapio .menu-section-1 {
+    gap: 18px;
+    padding: 0px 25px;
+    margin: 20px 0px;
+    width: max(100% - 25px, 350px);
+  }
+
+  .cardapio .menu-section-2 {
+    gap: 18px;
+    padding: 0px 25px;
+    width: max(100% - 25px, 350px);
+  }
+
+  .cardapio .menu-section-3 {
+    gap: 18px;
+    padding: 0px 25px;
+    margin: 20px 0px;
+    width: max(100% - 25px, 350px);
+  }
+
+  .cardapio .menu-items {
+    width: 325px;
+    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
