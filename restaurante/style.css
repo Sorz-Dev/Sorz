@@ -1,0 +1,829 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--padrao-texto);
+  background-color: var(--fundo-secundario);
+}
+
+.home {
+  position: flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--fundo-secundario);
+  justify-items: center;
+  align-items: center;
+}
+
+.cardapio {
+  position: flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--fundo-secundario);
+  justify-items: center;
+  align-items: center;
+}
+
+.header-top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  position: relative;
+}
+
+.header-bg {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 30px;
+  background-color: var(--texto-preco);
+}
+
+.header-overlay {
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  height: 60px;
+  background-color: var(--fundo-secundario);
+}
+
+.logo-main {
+  position: absolute;
+  width: 106px;
+  height: 36px;
+  top: 42px;
+  left: 20px;
+  object-fit: cover;
+}
+
+.home .hero-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 520px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background-image: url(./img/hero-section.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.cardapio .hero-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 520px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  background-image: url(./img/hero-cardapio.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.hero-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.home .logo-hero {
+  position: relative;
+  width: 230px;
+  object-fit: cover;
+}
+
+.cardapio .cardapio-hero {
+  position: relative;
+  width: 230px;
+  object-fit: cover;
+}
+
+.cardapio .menu-barra {
+  position: relative;
+  width: 222px;
+  object-fit: cover;
+}
+
+.home .hero-subtitle {
+  position: relative;
+  width: fit-content;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  color: var(--texto-destaque);
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .hero-text {
+  position: relative;
+  width: fit-content;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--texto-primario-invertido);
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.home .about-section {
+  display: flex;
+  flex-direction: column;
+  max-width: 1296px;
+  width: 100%;
+
+  padding: 0px 30px;
+
+  height: auto;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  background-color: var(--fundo-secundario);
+  margin: 30px 0px;
+}
+
+.home .about-content {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  
+  gap: 30px max(10px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+}
+
+.home .about-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  gap: 6px;
+  position: relative;
+}
+
+.home .highlight-text {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1.00px;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  color: var(--texto-primario);
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .about-title {
+  position: relative;
+  align-self: stretch;
+  font-family: "Berkshire Swash", Helvetica;
+  font-weight: 400;
+  color: var(--texto-destaque);
+  font-size: 50px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .about-subtitle {
+  position: relative;
+  width: fit-content;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 500;
+  color: var(--texto-primario);
+  font-size: 22px;
+  line-height: normal;
+}
+
+.home .about-description {
+  position: relative;
+  width: fit-content;
+  align-self: stretch;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 500;
+  color: var(--texto-primario);
+  font-size: 20px;
+  letter-spacing: 0.12px;
+  line-height: normal;
+}
+
+.home .pizza-image {
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 0px 0px 24px;
+  position: relative;
+  border-radius: 20px;
+  background-image: url(./img/menu-header-1.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.home .hours-box {
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 0px 0px 24px;
+  position: relative;
+  border-radius: 20px;
+  background-image: url(./img/hours-box.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.home .hours-title {
+  position: relative;
+  align-self: stretch;
+  font-family: "Berkshire Swash", Helvetica;
+  font-weight: 400;
+  color: var(--texto-primario-invertido);
+  font-size: 65px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .hours-description {
+  position: relative;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  color: var(--texto-primario-invertido);
+  font-size: 26px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .menu-section {
+  display: flex;
+  width: 100%;
+  min-width: 350px;
+  max-width: 1400px;
+  flex-direction: column;
+  
+  align-items: center;
+  align-content: center;
+
+  padding: 0px max(35px, calc((100vw - 100%) / 2));
+
+  gap: 26px;
+  margin-bottom: 30px;
+  position: relative;
+  background-color: var(--fundo-secundario);
+}
+
+.cardapio .menu-section-1 {
+  display: flex;
+  width: 100%;
+  min-width: 350px;
+  max-width: 1400px;
+  flex-direction: column;
+
+  align-items: center;
+  align-content: center;
+
+  padding: 0px max(35px, calc((100vw - 100%) / 2));
+
+  gap: 30px;
+  margin: 30px 0px 40px;
+  position: relative;
+}
+
+.cardapio .menu-section-2 {
+  display: flex;
+  width: 100%;
+  min-width: 350px;
+  max-width: 1400px;
+  flex-direction: column;
+
+  align-items: center;
+  align-content: center;
+
+  padding: 0px max(35px, calc((100vw - 100%) / 2));
+
+  gap: 30px;
+  margin: 30px 0px 40px;
+  position: relative;
+}
+
+.cardapio .menu-section-3 {
+  display: flex;
+  width: 100%;
+  min-width: 350px;
+  max-width: 1400px;
+  flex-direction: column;
+
+  align-items: center;
+  align-content: center;
+
+  padding: 0px max(35px, calc((100vw - 100%) / 2));
+
+  gap: 30px;
+  margin: 30px 0px 40px;
+  position: relative;
+}
+
+.cardapio .menu-header-1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./img/menu-header-1.jpg);
+  background-size: cover;
+  background-position: 50% 90%;
+}
+
+.cardapio .menu-header-2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./img/menu-header-2.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.cardapio .menu-header-3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 120px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-image: url(./img/menu-header-3.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.cardapio .menu-title {
+  position: relative;
+  width: fit-content;
+  font-family: "Berkshire Swash", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .menu-header-content {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.home .menu-leaf-icon {
+  position: relative;
+  width: 108px;
+  height: 68px;
+  object-fit: cover;
+}
+
+.home .menu-title {
+  position: relative;
+  width: fit-content;
+  font-family: "Berkshire Swash", Helvetica;
+  font-weight: 400;
+  color: var(--texto-destaque);
+  font-size: 45px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.home .menu-subtitle {
+  position: relative;
+  width: fit-content;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 700;
+  color: var(--texto-primario);
+  font-size: 24px;
+  text-align: center;
+}
+
+.home .menu-items {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  align-items: center;
+  justify-content: left;
+
+  padding: 0px min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
+
+  gap: 30px max(10px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+
+  position: relative;
+}
+
+.cardapio .menu-items {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+  align-items: center;
+  justify-content: left;
+
+  padding: 0px min(max((100% - 1236px - max((100% - 1236px) / 2, 60px)) / 2, 0px));
+
+  gap: 30px max(16px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+
+  position: relative;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-width: 325px;
+  max-width: 412px;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.menu-image {
+  position: relative;
+  width: 100px;
+  min-width: 100px;
+  max-width: 100px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.menu-item-content {
+  width: auto;
+  max-width: 302px;
+  min-width: 225px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+}
+
+.badge-1 {
+  display: inline-flex;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 3px 8px;
+  position: relative;
+  background-color: var(--cor-novidade);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.badge-2 {
+  display: inline-flex;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 3px 8px;
+  position: relative;
+  background-color: #150ab6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.badge-3 {
+  display: inline-flex;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 3px 8px;
+  position: relative;
+  background-color: #150ab6;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.badge-icon {
+  position: relative;
+  width: 7.5px;
+  height: 10px;
+}
+
+.badge-label {
+  position: relative;
+  width: fit-content;
+  font-family: "Mulish-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--texto-primario-invertido);
+  font-size: 8px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.menu-item-title {
+  position: relative;
+  align-self: stretch;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 700;
+  color: var(--texto-primario);
+  font-size: 17px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.menu-item-description {
+  position: relative;
+  align-self: stretch;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 400;
+  color: var(--texto-secundario);
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.prices {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.menu-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.old-price {
+  display: inline-flex;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  width: auto;
+}
+
+.old-price-line {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--texto-primario);
+  z-index: 2;
+}
+
+.old-currency-symbol {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Mulish-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--texto-primario);
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.old-price-value {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Mulish-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--texto-primario);
+  font-size: 10px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.currency-symbol {
+  margin-top: -0.50px;
+  position: relative;
+  width: fit-content;
+  font-family: "Mulish-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--texto-preco);
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.price-value {
+  font-size: 17px;
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Mulish-Bold", Helvetica;
+  font-weight: 700;
+  color: var(--texto-preco);
+  letter-spacing: 0;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.full-menu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  position: relative;
+  flex: 0 0 auto;
+  background-color: var(--texto-preco);
+  border-radius: 16px;
+}
+
+.full-menu-link-2 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Josefin Sans", Helvetica;
+  font-weight: 500;
+  color: var(--texto-primario-invertido);
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+  position: relative;
+  background-color: var(--fundo-footer);
+  padding: 26px 0px;
+}
+
+.footer-image {
+  position: relative;
+  width: calc(100% - 70px);
+  max-width: 1296px;
+  min-width: 1010px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.footer-text {
+  position: relative;
+  width: fit-content;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: var(--texto-primario-invertido);
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 30px;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.lightbox-image {
+width: auto;
+height: 100%;
+max-height: 630px;
+object-fit: contain;
+border-radius: 10px;
+box-shadow: 0 0 20px #000;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1079px) {
+  .home .pizza-image {
+    display: none;
+  }
+
+  .home .about-section {
+    width: 100%;
+    padding: 0px 40px;
+    padding: 26px min(max((100% - 820px - max((100% - 108px) / 2, 208px)) / 2, 40px));
+  }
+  .home .about-content {
+    gap: 30px max(22px, min((100vw - 100% - max(38px, calc((100vw - 100%) / 2))) / 2, 38px));
+  }
+  .home .about-text {
+    max-width: 412px;
+    min-width: 332px;
+  }
+  .home .hours-box {
+    max-width: 412px;
+    min-width: 332px;
+  }  
+  .menu-item {
+    max-width: 412px;
+    min-width: 332px;
+  }
+
+  .home .menu-section {
+    max-width: 864px;
+    min-width: 766px;
+    width: calc(100% - 80px);
+  }
+  
+  .cardapio .menu-section-1 {
+    max-width: 918px;
+    min-width: 682px;
+    width: calc(100% - 80px);
+    padding: 0px;
+  }
+  
+  .home .menu-items {
+    gap: 30px max(22px, min((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 38px));
+  } 
+  
+  .cardapio .menu-items {
+    padding: 0px min(max((100vw - 100% - max(40px, calc((100vw - 100%) / 2))) / 2, 0px)); 
+
+    padding: 0px min(max((100% - 712px - max((100% - 712px) / 2, 30px)) / 2, 0px));
+
+    gap: 20px max(16px, min((100vw - 100% - max(35px, calc((100vw - 100%) / 2))) / 2, 30px));
+
+  }
+
+  .menu-image {
+    width: 90px;
+    min-width: 90px;
+    max-width: 90px;
+  }
+  .footer {
+    padding: 26px min(max((100% - 820px - max((100% - 820px) / 2, 30px)) / 2, 0px));
+  }
+  .footer-image {
+    width: calc(100% - 80px);
+    max-width: 862px;
+    min-width: 686px;
+  }
+}
+
+@media screen and (max-width: 765px) {
+
+}

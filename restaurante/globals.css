@@ -1,0 +1,166 @@
+/* =================== */
+/* Fontes               */
+/* =================== */
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Josefin+Sans:wght@400;700&family=Mulish:wght@400;700&display=swap');
+
+:root {
+  /* Fontes */
+  --font-decorativa: 'Berkshire Swash', cursive;
+  --font-padrao: 'Josefin Sans', sans-serif;
+  --font-preco: 'Mulish', sans-serif;
+
+  /* =================== */
+  /* Paleta de Textos     */
+  /* =================== */
+  --texto-primario: #000000;
+  --texto-secundario: #181818;
+  --texto-primario-invertido: #FFFFFF;
+  --texto-secundario-invertido: #EEEEEE;
+  --texto-destaque: #FE8800;
+  --texto-preco: #FCA336;
+
+  /* =================== */
+  /* Paleta de Destaques  */
+  /* =================== */
+  --cor-novidade: #B60A0A;
+  --cor-promocao: #150AB6;
+  --cor-temporario: #0AB68B;
+
+  --cor-pizzas: #CF0134;
+  --cor-lanches: #CF4712;
+  --cor-porcoes: #570AA0;
+
+  /* =================== */
+  /* Paleta de Fundos     */
+  /* =================== */
+  --fundo-cabecalho: #FCA336;
+
+  --fundo-primario: #FFF3E5;
+  --fundo-secundario: #FFF9F1;
+
+  --fundo-dark: #181818;
+  --fundo-dark-secundario: #1D1D1D;
+
+  --fundo-footer: #404040;
+}
+
+/* =================== */
+/* Reset e padrão       */
+/* =================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-texto);
+  background-color: var(--fundo-secundario);
+  color: var(--texto-primario);
+}
+
+/* =================== */
+/* Títulos e botões     */
+/* =================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-titulo);
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 20px;
+}
+
+strong, b {
+  color: var(--texto-destaque);
+}
+
+button, .btn {
+  font-family: var(--font-titulo);
+  background-color: var(--texto-destaque);
+  color: var(--texto-primario-invertido);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--texto-preco);
+}
+
+/* =================== */
+/* Tags / Etiquetas     */
+/* =================== */
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 14px;
+  font-family: var(--font-titulo);
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tag-novidade    { background-color: var(--cor-novidade); }
+.tag-promocao    { background-color: var(--cor-promocao); }
+.tag-temporario  { background-color: var(--cor-temporario); }
+.tag-pizzas      { background-color: var(--cor-pizzas); }
+.tag-lanches     { background-color: var(--cor-lanches); }
+.tag-porcoes     { background-color: var(--cor-porcoes); }
+
+/* =================== */
+/* Cards de Produto     */
+/* =================== */
+.card-produto {
+  background-color: var(--fundo-secundario);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-produto:hover {
+  transform: scale(1.02);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-titulo {
+  font-family: var(--font-titulo);
+  font-size: 20px;
+  color: var(--texto-primario);
+}
+
+.card-descricao {
+  font-size: 15px;
+  color: var(--texto-secundario);
+  font-family: var(--font-texto);
+}
+
+.card-preco {
+  font-size: 17px;
+  color: var(--texto-preco);
+  font-weight: bold;
+  font-family: var(--font-titulo);
+}
