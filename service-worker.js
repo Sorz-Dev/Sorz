@@ -2,10 +2,11 @@ const CACHE_NAME = "sorz-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
-  "/img/logo.webp",
-  "/print1.png",
-  "/print2.png",
   "/manifest.json",
+  "/img/logo.webp",
+  "/img/delivery.webp",
+  "/img/jlmudancas.png",
+  "/img/cardapio.webp",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
 ];
