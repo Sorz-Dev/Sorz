@@ -14,42 +14,34 @@
     <meta name="author" content="Sorz | Bruno Soares" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
-    
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Sorz" />
-    <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-icon" content="/img/logo.webp" />
-    <meta name="application-name" content="Sorz" />
-    <meta name="msapplication-TileColor" content="#1e293b" />
-    <meta name="msapplication-TileImage" content="/img/logo.webp" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#1e293b" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="Sorz" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-icon" content="/img/logo.webp" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="Sorz" />
     <meta name="application-name" content="Sorz" />
+    <meta name="format-detection" content="telephone=no" />
 
+    <!-- Manifest e Favicon -->
     <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Sorz - Projetos Web" />
     <meta
       property="og:description"
       content="Explore nossos projetos modernos em desenvolvimento: sistemas, plataformas e apps com tecnologia de ponta."
     />
-    <meta
-      property="og:image"
-      content="https://www.sorz.com.br/img/logo.webp"
-    />
+    <meta property="og:image" content="https://www.sorz.com.br/img/logo.webp" />
     <meta property="og:url" content="https://www.sorz.com.br/" />
     <meta property="og:type" content="website" />
 
-    <!-- Favicon e pré-carregamento de imagens -->
-    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <!-- Preload de Imagens -->
     <link rel="preload" href="./img/logo.webp" as="image" />
     <link rel="preload" href="./print1.png" as="image" />
     <link rel="preload" href="./print2.png" as="image" />
@@ -57,7 +49,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Estilos adicionais -->
+    <!-- LazySizes para carregamento inteligente de imagens -->
+    <script src="./lazysizes.min.js" async></script>
+
     <style>
       .scroll-preview {
         overflow: hidden;
@@ -77,68 +71,101 @@
     </style>
   </head>
   <body class="bg-zinc-950 text-white font-sans">
-    <div class="max-w-5xl mx-auto px-6 py-16">
+    <div class="max-w-7xl mx-auto px-6 py-12">
       <!-- Logo e Apresentação -->
-      <div class="text-center mb-16">
-        <img src="./img/logo.webp" alt="Logo" class="mx-auto h-20 mb-4" />
+      <div class="text-center mb-8">
+        <img src="./img/logo.webp" alt="Logo Sorz" class="h-[62px] w-[282px] mx-auto mb-4" />
         <h1 class="text-3xl font-bold mb-2">Projetos em desenvolvimento</h1>
         <p class="text-zinc-400">Explore o que estamos criando agora na Sorz</p>
       </div>
 
       <!-- Projetos -->
-      <div class="grid md:grid-cols-2 gap-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         <!-- Projeto 1 -->
         <div class="bg-zinc-900 p-4 rounded-xl shadow-lg">
-          <div class="scroll-preview h-64 rounded-lg overflow-hidden">
-            <img src="/print1.png" alt="Projeto 1" class="w-full object-top" />
+          <div class="scroll-preview h-48 rounded-lg overflow-hidden">
+            <img
+              class="lazyload w-full object-top"
+              data-src="./print1.png"
+              src="./img/placeholder.png"
+              alt="Sistema de Delivery White Label"
+            />
           </div>
           <h2 class="text-xl font-semibold mt-4 mb-2">
-            Sistema de Delivery White Label
+            WebApp Delivery Completo
           </h2>
           <p class="text-zinc-400 mb-4 text-sm">
-            Aplicativo completo com painel administrativo, geração de miniaturas
-            e controle de pedidos em tempo real.
+            Sistema com login, painel administrativo, pedidos, miniaturas em WebP e fluxo real de entrega.
           </p>
           <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
-              >Ver Website</a
-            >
-            <a
-              href="#"
-              class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm"
-              >Abrir no GitHub</a
-            >
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm">Ver Website</a>
+            <a href="#" class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm flex items-center gap-2">
+              Abrir no GitHub
+              <img src="./img/github.svg" alt="GitHub" class="h-4 w-4" />
+            </a>
           </div>
         </div>
-
-        <!-- Projeto 2 (exemplo extra) -->
+      
+        <!-- Projeto 2 -->
         <div class="bg-zinc-900 p-4 rounded-xl shadow-lg">
-          <div class="scroll-preview h-64 rounded-lg overflow-hidden">
-            <img src="/print2.png" alt="Projeto 2" class="w-full object-top" />
+          <div class="scroll-preview h-48 rounded-lg overflow-hidden">
+            <img
+              class="lazyload w-full object-top"
+              data-src="./print2.png"
+              src="./img/placeholder.png"
+              alt="JL Mudanças & Fretes"
+            />
           </div>
           <h2 class="text-xl font-semibold mt-4 mb-2">
-            Portal Educacional Soarxz
+            JL Mudanças & Fretes
           </h2>
           <p class="text-zinc-400 mb-4 text-sm">
-            Plataforma de ensino web com trilhas de aprendizado, conteúdo
-            dinâmico e cursos modulares para devs.
+            Site institucional para empresa de mudanças em Campinas, com foco em SEO local, otimização de performance, e botão direto para atendimento no WhatsApp.
           </p>
           <div class="flex gap-4">
-            <a
-              href="#"
-              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
-              >Ver Website</a
-            >
-            <a
-              href="#"
-              class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm"
-              >Abrir no GitHub</a
-            >
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm">Ver Website</a>
+            <a href="#" class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm flex items-center gap-2">
+              Abrir no GitHub
+              <img src="./img/github.svg" alt="GitHub" class="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      
+        <!-- Projeto 3 -->
+        <div class="bg-zinc-900 p-4 rounded-xl shadow-lg">
+          <div class="scroll-preview h-48 rounded-lg overflow-hidden">
+            <img
+              class="lazyload w-full object-top"
+              data-src="./print3.png"
+              src="./img/placeholder.png"
+              alt="Cardápio Digital"
+            />
+          </div>
+          <h2 class="text-xl font-semibold mt-4 mb-2">
+            Cardápio Digital Interativo
+          </h2>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Solução leve e moderna para apresentação de itens com imagens, descrições e integração com pedido.
+          </p>
+          <div class="flex gap-4">
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm">Ver Website</a>
+            <a href="#" class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm flex items-center gap-2">
+              Abrir no GitHub
+              <img src="./img/github.svg" alt="GitHub" class="h-4 w-4" />
+            </a>
           </div>
         </div>
       </div>
-    </div>
+      
+
+    <!-- Service Worker -->
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then((reg) => console.log("Service worker registrado:", reg.scope))
+          .catch((err) => console.error("Erro ao registrar o SW:", err));
+      }
+    </script>
   </body>
 </html>
