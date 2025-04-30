@@ -1,33 +1,144 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8" />
-    <title>Sorz</title>
-    <meta name="description" content="Desenvolvimento de Sites e Aplicativos" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <title>Sorz – Projetos Web</title>
+    <meta
+      name="description"
+      content="Confira os projetos em desenvolvimento da Sorz. Web apps modernos com React, Tailwind, Vercel e muito mais. Veja o que vem por aí!"
+    />
     <meta
       name="keywords"
-      content="Sors, Sorz, Soarxz, WebApp, Web Design, Web Developer, Desenvolvimento de Sites, Desenvolvimento de Aplicativos, Desenvolvimento Web, Desenvolvimento Mobile, Programação, Frontend, Backend, Fullstack, UX/UI Design"
+      content="projetos web, desenvolvimento web, Soarxz, Sorz, React, Tailwind, Vercel, GitHub, design moderno"
     />
-    <meta name="author" content="Sorz" />
-    <meta property="og:title" content="Sorz" />
+    <meta name="author" content="Sorz | Bruno Soares" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sorz" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-icon" content="/img/logo.webp" />
+    <meta name="application-name" content="Sorz" />
+    <meta name="msapplication-TileColor" content="#1e293b" />
+    <meta name="msapplication-TileImage" content="/img/logo.webp" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="theme-color" content="#1e293b" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sorz" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-icon" content="/img/logo.webp" />
+    <meta name="application-name" content="Sorz" />
+
+    <link rel="manifest" href="/manifest.json" />
+
+    <meta property="og:title" content="Sorz - Projetos Web" />
     <meta
       property="og:description"
-      content="Desenvolvimento de Sites e Aplicativos"
+      content="Explore nossos projetos modernos em desenvolvimento: sistemas, plataformas e apps com tecnologia de ponta."
     />
     <meta
       property="og:image"
-      content="https://www.sorz.com.br/img/favicon.png"
+      content="https://www.sorz.com.br/img/logo.webp"
     />
     <meta property="og:url" content="https://www.sorz.com.br/" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./img/favicon.png" type="image/x-icon" />
-    <meta name="robots" content="index, follow" />
-    <meta name="google-site-verification" content="seu_token_aqui" />
-    <script src="./lazysizes.min.js" async></script>
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon e pré-carregamento de imagens -->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="preload" href="./img/logo.webp" as="image" />
+    <link rel="preload" href="./print1.png" as="image" />
+    <link rel="preload" href="./print2.png" as="image" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Estilos adicionais -->
+    <style>
+      .scroll-preview {
+        overflow: hidden;
+        position: relative;
+      }
+      .scroll-preview img {
+        transition: transform 15s linear;
+      }
+      .scroll-preview:hover img {
+        transform: translateY(-50%);
+      }
+      @media (hover: none) {
+        .scroll-preview img {
+          transform: none !important;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <h1>Olá, mundo!</h1>
-    <img src="./img/img.png" alt="imagem" />
+  <body class="bg-zinc-950 text-white font-sans">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+      <!-- Logo e Apresentação -->
+      <div class="text-center mb-16">
+        <img src="./img/logo.webp" alt="Logo" class="mx-auto h-20 mb-4" />
+        <h1 class="text-3xl font-bold mb-2">Projetos em desenvolvimento</h1>
+        <p class="text-zinc-400">Explore o que estamos criando agora na Sorz</p>
+      </div>
+
+      <!-- Projetos -->
+      <div class="grid md:grid-cols-2 gap-10">
+        <!-- Projeto 1 -->
+        <div class="bg-zinc-900 p-4 rounded-xl shadow-lg">
+          <div class="scroll-preview h-64 rounded-lg overflow-hidden">
+            <img src="/print1.png" alt="Projeto 1" class="w-full object-top" />
+          </div>
+          <h2 class="text-xl font-semibold mt-4 mb-2">
+            Sistema de Delivery White Label
+          </h2>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Aplicativo completo com painel administrativo, geração de miniaturas
+            e controle de pedidos em tempo real.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
+              >Ver Website</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm"
+              >Abrir no GitHub</a
+            >
+          </div>
+        </div>
+
+        <!-- Projeto 2 (exemplo extra) -->
+        <div class="bg-zinc-900 p-4 rounded-xl shadow-lg">
+          <div class="scroll-preview h-64 rounded-lg overflow-hidden">
+            <img src="/print2.png" alt="Projeto 2" class="w-full object-top" />
+          </div>
+          <h2 class="text-xl font-semibold mt-4 mb-2">
+            Portal Educacional Soarxz
+          </h2>
+          <p class="text-zinc-400 mb-4 text-sm">
+            Plataforma de ensino web com trilhas de aprendizado, conteúdo
+            dinâmico e cursos modulares para devs.
+          </p>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded text-sm"
+              >Ver Website</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded text-sm"
+              >Abrir no GitHub</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
