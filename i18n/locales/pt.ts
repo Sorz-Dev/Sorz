@@ -10,6 +10,7 @@ export const messages = {
   nav: {
     about: "Sobre",
     projects: "Projetos",
+    tech: "Tecnologias",
     contact: "Contato",
     resume: "Currículo",
   },

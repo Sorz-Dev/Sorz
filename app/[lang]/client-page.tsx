@@ -83,6 +83,9 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
               >
                 {t.nav.projects}
               </button>
+              <button onClick={() => scrollToSection("tech")} className="transition-colors hover:text-foreground/80">
+                {t.nav.tech}
+              </button>
               <button onClick={() => scrollToSection("contact")} className="transition-colors hover:text-foreground/80">
                 {t.nav.contact}
               </button>
@@ -105,6 +108,9 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
               </button>
               <button onClick={() => scrollToSection("projects")} className="text-left py-2">
                 {t.nav.projects}
+              </button>
+              <button onClick={() => scrollToSection("tech")} className="text-left py-2">
+                {t.nav.tech}
               </button>
               <button onClick={() => scrollToSection("contact")} className="text-left py-2">
                 {t.nav.contact}
@@ -197,7 +203,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
           </div>
         </section>
 
-        <section className="py-6 md:py-8">
+        <section id="tech" className="py-6 md:py-8">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6 text-center">
               {t.tech.title}
