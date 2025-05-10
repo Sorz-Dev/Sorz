@@ -114,7 +114,7 @@ export default function RootLayout({
         <meta property="og:image:alt" content="Sorz - Digital Development" />
 
         {/* Meta tags explícitas para Twitter */}
-        <meta name="twitter:image" content="https://sorz.com.br/logo-og.webp"" />
+        <meta name="twitter:image" content="https://sorz.com.br/logo-og.webp" />
       </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
