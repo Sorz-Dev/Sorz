@@ -81,16 +81,15 @@ export const messages = {
     privacy: "Privacy Policy",
   },
   whatsapp: {
-    buttonText: "Talk to an expert",
+    buttonText: "Talk to us",
     message: "Hello! I came from the Sorz website and would like more information.",
   },
   cookies: {
     title: "This website uses cookies",
     description:
       "We use cookies to improve your browsing experience, personalize content and ads, and analyze our traffic. By continuing to browse, you agree to the use of cookies.",
-    accept: "Accept all",
+    accept: "Accept",
     reject: "Reject",
-    settings: "Settings",
     privacyPolicy: "Learn more in our Privacy Policy",
     manage: "Manage preferences",
     necessary: "Necessary cookies",

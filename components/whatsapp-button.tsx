@@ -9,6 +9,7 @@ interface WhatsAppButtonProps {
 
 export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
   const [isVisible, setIsVisible] = useState(false)
+  const [isNearFooter, setIsNearFooter] = useState(false)
   const [cookiesAccepted, setCookiesAccepted] = useState(false)
   const messages = i18n.messages[locale]
   // Texto mais curto para o botão
@@ -27,10 +28,24 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
     }
 
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      // Mostrar o botão após um scroll mínimo (reduzido para aparecer mais cedo)
+      if (window.scrollY > 100) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
+      }
+
+      // Verificar se está próximo ao rodapé
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+      const scrollPosition = window.scrollY + windowHeight
+      const footerHeight = 100 // Altura aproximada do rodapé
+
+      // Se estiver próximo ao rodapé, ajustar a posição
+      if (documentHeight - scrollPosition < footerHeight) {
+        setIsNearFooter(true)
+      } else {
+        setIsNearFooter(false)
       }
     }
 
@@ -47,6 +62,9 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
 
     // Verificar periodicamente (caso o usuário aceite em outra aba)
     const intervalId = setInterval(checkCookieConsent, 1000)
+
+    // Executar handleScroll inicialmente para configurar o estado
+    handleScroll()
 
     return () => {
       window.removeEventListener("scroll", handleScroll)
@@ -65,9 +83,9 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}
+      className={`fixed z-50 transition-all duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      } ${isNearFooter ? "bottom-24 md:bottom-20" : "bottom-6"} right-6`}
     >
       <button
         onClick={handleClick}

@@ -81,16 +81,15 @@ export const messages = {
     privacy: "Política de Privacidade",
   },
   whatsapp: {
-    buttonText: "Fale com um especialista",
+    buttonText: "Fale conosco",
     message: "Olá! Vim do site da Sorz e gostaria de mais informações.",
   },
   cookies: {
     title: "Este site usa cookies",
     description:
       "Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo e anúncios, e analisar nosso tráfego. Ao continuar navegando, você concorda com o uso de cookies.",
-    accept: "Aceitar todos",
+    accept: "Aceitar",
     reject: "Rejeitar",
-    settings: "Configurações",
     privacyPolicy: "Saiba mais em nossa Política de Privacidade",
     manage: "Gerenciar preferências",
     necessary: "Cookies necessários",

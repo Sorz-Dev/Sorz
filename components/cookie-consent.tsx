@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import type { Locale } from "@/i18n"
 
 interface CookieConsentProps {
@@ -14,24 +13,30 @@ interface CookieConsentProps {
     description: string
     accept: string
     reject: string
-    settings: string
     privacyPolicy: string
     privacyPolicyLink: string
   }
   onClose?: () => void
+  forceShow?: boolean
 }
 
-export function CookieConsent({ locale, translations, onClose }: CookieConsentProps) {
+export function CookieConsent({ locale, translations, onClose, forceShow = false }: CookieConsentProps) {
   const [showConsent, setShowConsent] = useState(false)
-  const router = useRouter()
 
   useEffect(() => {
     // Verificar se o usuário já deu consentimento
     const consent = localStorage.getItem("cookie-consent")
-    if (!consent) {
+    if (!consent || forceShow) {
       setShowConsent(true)
     }
-  }, [])
+  }, [forceShow])
+
+  // Atualizar quando forceShow mudar
+  useEffect(() => {
+    if (forceShow) {
+      setShowConsent(true)
+    }
+  }, [forceShow])
 
   const acceptCookies = () => {
     localStorage.setItem("cookie-consent", "accepted")
@@ -53,8 +58,9 @@ export function CookieConsent({ locale, translations, onClose }: CookieConsentPr
     if (onClose) onClose()
   }
 
-  const openSettings = () => {
-    router.push(`/${locale}/privacy-settings`)
+  const handleClose = () => {
+    setShowConsent(false)
+    if (onClose) onClose()
   }
 
   if (!showConsent) return null
@@ -76,16 +82,13 @@ export function CookieConsent({ locale, translations, onClose }: CookieConsentPr
             <Button variant="outline" size="sm" onClick={rejectCookies}>
               {translations.reject}
             </Button>
-            <Button variant="outline" size="sm" onClick={openSettings}>
-              {translations.settings}
-            </Button>
             <Button size="sm" onClick={acceptCookies}>
               {translations.accept}
             </Button>
           </div>
         </div>
         <button
-          onClick={rejectCookies}
+          onClick={handleClose}
           className="absolute top-2 right-2 text-gray-400 hover:text-white"
           aria-label="Fechar"
         >

@@ -278,7 +278,6 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
             description: t.cookies.description,
             accept: t.cookies.accept,
             reject: t.cookies.reject,
-            settings: t.cookies.settings,
             privacyPolicy: t.cookies.privacyPolicy,
             privacyPolicyLink: "/privacy",
           }}

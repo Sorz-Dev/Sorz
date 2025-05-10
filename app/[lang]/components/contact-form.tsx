@@ -31,6 +31,14 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
   const [showCookieConsent, setShowCookieConsent] = useState(false)
   const t = i18n.messages[locale]
 
+  // Placeholders para os campos
+  const placeholders = {
+    name: locale === "pt" ? "Seu nome" : "Your name",
+    email: locale === "pt" ? "seu.email@exemplo.com" : "your.email@example.com",
+    whatsapp: "+55 (00) 00000-0000",
+    message: locale === "pt" ? "Sua mensagem aqui..." : "Your message here...",
+  }
+
   // Verificar consentimento de cookies
   useEffect(() => {
     const checkCookieConsent = () => {
@@ -123,6 +131,13 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                       ? "Para utilizar este formulário, você precisa aceitar nossa política de cookies e privacidade."
                       : "To use this form, you need to accept our cookies and privacy policy."}
                   </p>
+                  <Button
+                    className="mt-2 bg-amber-600 hover:bg-amber-700 text-white"
+                    size="sm"
+                    onClick={() => setShowCookieConsent(true)}
+                  >
+                    {locale === "pt" ? "Aceitar política" : "Accept policy"}
+                  </Button>
                 </div>
               )}
 
@@ -135,6 +150,8 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     id="name"
                     name="name"
                     required
+                    placeholder={placeholders.name}
+                    autoComplete="name"
                     className={`bg-[#1d1d1d] border-gray-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -157,6 +174,8 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     name="email"
                     type="email"
                     required
+                    placeholder={placeholders.email}
+                    autoComplete="email"
                     className={`bg-[#1d1d1d] border-gray-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -178,7 +197,8 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     id="whatsapp"
                     name="whatsapp"
                     type="tel"
-                    placeholder="+55 (00) 00000-0000"
+                    placeholder={placeholders.whatsapp}
+                    autoComplete="tel"
                     className={`bg-[#1d1d1d] border-gray-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -200,6 +220,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     id="message"
                     name="message"
                     required
+                    placeholder={placeholders.message}
                     className={`bg-[#1d1d1d] border-gray-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
@@ -219,7 +240,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                   }`}
                   disabled={state.submitting || !cookiesAccepted}
-                  onClick={!cookiesAccepted ? handleFieldFocus : undefined}
+                  onClick={!cookiesAccepted ? () => setShowCookieConsent(true) : undefined}
                 >
                   {state.submitting ? labels.sending : labels.submit}
                 </Button>
@@ -239,11 +260,11 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
             description: t.cookies.description,
             accept: t.cookies.accept,
             reject: t.cookies.reject,
-            settings: t.cookies.settings,
             privacyPolicy: t.cookies.privacyPolicy,
             privacyPolicyLink: "/privacy",
           }}
           onClose={() => setShowCookieConsent(false)}
+          forceShow={true}
         />
       )}
     </>
