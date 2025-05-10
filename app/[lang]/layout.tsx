@@ -108,7 +108,7 @@ export default function RootLayout({
         <link rel="canonical" href={`https://sorz.com.br/${params.lang}`} />
 
         {/* Meta tags explícitas para Open Graph */}
-        <meta property="og:image" content="https://sorz.com.br/logo-og.webp"" />
+        <meta property="og:image" content="https://sorz.com.br/logo-og.webp" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="1200" />
         <meta property="og:image:alt" content="Sorz - Digital Development" />
