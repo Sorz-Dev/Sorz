@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       siteName: "Sorz",
       images: [
         {
-          url: "https://sorz.com.br/logo-op.webp", // URL absoluta
+          url: "https://sorz.com.br/logo-og.webp", // URL absoluta
           width: 1200,
           height: 1200,
           alt: "Sorz - Digital Development",
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       card: "summary_large_image",
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ["https://sorz.com.br/images/logo-og.webp"], // URL absoluta
+      images: ["https://sorz.com.br/logo-og.webp"], // URL absoluta
     },
     robots: {
       index: true,
@@ -108,13 +108,13 @@ export default function RootLayout({
         <link rel="canonical" href={`https://sorz.com.br/${params.lang}`} />
 
         {/* Meta tags explícitas para Open Graph */}
-        <meta property="og:image" content="https://sorz.com.br/images/logo-og.webp" />
+        <meta property="og:image" content="https://sorz.com.br/logo-og.webp"" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="1200" />
         <meta property="og:image:alt" content="Sorz - Digital Development" />
 
         {/* Meta tags explícitas para Twitter */}
-        <meta name="twitter:image" content="https://sorz.com.br/images/logo-og.webp" />
+        <meta name="twitter:image" content="https://sorz.com.br/logo-og.webp"" />
       </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
