@@ -1,0 +1,16 @@
+{
+  "name": "Sorz - Desenvolvimento Digital",
+  "short_name": "Sorz",
+  "description": "Empresa especializada em desenvolvimento de sites, web apps (PWA) e aplicativos nativos.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1d1d1d",
+  "theme_color": "#1d1d1d",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
