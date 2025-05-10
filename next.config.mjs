@@ -13,6 +13,12 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   },
+  // Configuração para build estático
+  output: 'export',
+  // Desabilitar o middleware para build estático
+  // (vamos usar uma abordagem alternativa para redirecionamento de idioma)
+  skipMiddlewareUrlNormalize: true,
+  skipTrailingSlashRedirect: true,
 }
 
 export default nextConfig
