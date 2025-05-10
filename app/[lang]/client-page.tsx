@@ -10,12 +10,20 @@ import { i18n, type Locale } from "@/i18n"
 import LanguageSwitcher from "./components/language-switcher"
 import { useState, useEffect } from "react"
 import { CookieConsent } from "@/components/cookie-consent"
+import { WhatsAppButton } from "@/components/whatsapp-button"
 
 export default function ClientPage({ params }: { params: { lang: Locale } }) {
   // Garantir que estamos usando um idioma válido
   const lang = i18n.locales.includes(params.lang) ? params.lang : i18n.defaultLocale
   const t = i18n.messages[lang]
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [cookieConsentShown, setCookieConsentShown] = useState(false)
+
+  useEffect(() => {
+    // Verificar se o usuário já deu consentimento
+    const consent = localStorage.getItem("cookie-consent")
+    setCookieConsentShown(!!consent)
+  }, [])
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id)
@@ -237,6 +245,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
                   success: t.contact.success,
                   error: t.contact.error,
                 }}
+                locale={lang}
               />
             </div>
           </div>
@@ -257,19 +266,25 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
         </div>
       </footer>
 
+      {/* Botão de WhatsApp */}
+      <WhatsAppButton locale={lang} />
+
       {/* Banner de consentimento de cookies */}
-      <CookieConsent
-        locale={lang}
-        translations={{
-          title: t.cookies.title,
-          description: t.cookies.description,
-          accept: t.cookies.accept,
-          reject: t.cookies.reject,
-          settings: t.cookies.settings,
-          privacyPolicy: t.cookies.privacyPolicy,
-          privacyPolicyLink: "/privacy",
-        }}
-      />
+      {!cookieConsentShown && (
+        <CookieConsent
+          locale={lang}
+          translations={{
+            title: t.cookies.title,
+            description: t.cookies.description,
+            accept: t.cookies.accept,
+            reject: t.cookies.reject,
+            settings: t.cookies.settings,
+            privacyPolicy: t.cookies.privacyPolicy,
+            privacyPolicyLink: "/privacy",
+          }}
+          onClose={() => setCookieConsentShown(true)}
+        />
+      )}
     </div>
   )
 }

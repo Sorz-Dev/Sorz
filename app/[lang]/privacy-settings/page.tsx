@@ -34,6 +34,9 @@ export default function PrivacySettingsPage({ params }: { params: { lang: Locale
     localStorage.setItem("cookie-consent", "custom")
     setSaved(true)
 
+    // Disparar evento para notificar outros componentes
+    window.dispatchEvent(new Event("storage"))
+
     // Resetar mensagem após 3 segundos
     setTimeout(() => {
       setSaved(false)

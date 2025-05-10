@@ -18,9 +18,10 @@ interface CookieConsentProps {
     privacyPolicy: string
     privacyPolicyLink: string
   }
+  onClose?: () => void
 }
 
-export function CookieConsent({ locale, translations }: CookieConsentProps) {
+export function CookieConsent({ locale, translations, onClose }: CookieConsentProps) {
   const [showConsent, setShowConsent] = useState(false)
   const router = useRouter()
 
@@ -35,11 +36,21 @@ export function CookieConsent({ locale, translations }: CookieConsentProps) {
   const acceptCookies = () => {
     localStorage.setItem("cookie-consent", "accepted")
     setShowConsent(false)
+
+    // Disparar evento para notificar outros componentes
+    window.dispatchEvent(new Event("storage"))
+
+    if (onClose) onClose()
   }
 
   const rejectCookies = () => {
     localStorage.setItem("cookie-consent", "rejected")
     setShowConsent(false)
+
+    // Disparar evento para notificar outros componentes
+    window.dispatchEvent(new Event("storage"))
+
+    if (onClose) onClose()
   }
 
   const openSettings = () => {

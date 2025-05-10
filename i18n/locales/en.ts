@@ -80,6 +80,10 @@ export const messages = {
     terms: "Terms of Use",
     privacy: "Privacy Policy",
   },
+  whatsapp: {
+    buttonText: "Talk to an expert",
+    message: "Hello! I came from the Sorz website and would like more information.",
+  },
   cookies: {
     title: "This website uses cookies",
     description:
