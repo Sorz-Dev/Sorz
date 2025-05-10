@@ -27,14 +27,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       description: messages.meta.description,
       url: "https://sorz.com.br",
       siteName: "Sorz",
-      images: [
-        {
-          url: "https://sorz.com.br/logo-og.webp", // URL absoluta
-          width: 1200,
-          height: 1200,
-          alt: "Sorz - Digital Development",
-        },
-      ],
+      image: "https://sorz.com.br/logo-og.webp",
       locale: params.lang,
       type: "website",
     },
@@ -42,7 +35,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       card: "summary_large_image",
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ["https://sorz.com.br/logo-og.webp"], // URL absoluta
+      image: "https://sorz.com.br/logo-og.webp",
     },
     robots: {
       index: true,
@@ -93,6 +86,7 @@ export default function RootLayout({
   children: React.ReactNode
   params: { lang: Locale }
 }) {
+  const messages = i18n.messages[params.lang]
   return (
     <html lang={params.lang} className="dark">
       <head>
@@ -107,14 +101,20 @@ export default function RootLayout({
 
         <link rel="canonical" href={`https://sorz.com.br/${params.lang}`} />
 
-        {/* Meta tags explícitas para Open Graph */}
+        {/* Meta tags explícitas para Open Graph com prefixo og: correto */}
         <meta property="og:image" content="https://sorz.com.br/logo-og.webp" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:alt" content="Sorz - Digital Development" />
+        <meta property="og:title" content={messages.meta.title} />
+        <meta property="og:description" content={messages.meta.description} />
+        <meta property="og:url" content="https://sorz.com.br" />
+        <meta property="og:site_name" content="Sorz" />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content={params.lang} />
 
         {/* Meta tags explícitas para Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:image" content="https://sorz.com.br/logo-og.webp" />
+        <meta name="twitter:title" content={messages.meta.title} />
+        <meta name="twitter:description" content={messages.meta.description} />
       </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
