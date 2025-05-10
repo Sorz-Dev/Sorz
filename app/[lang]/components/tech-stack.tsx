@@ -68,10 +68,8 @@ export default function TechStack({ categories }: TechStackProps) {
       {technologies.map((tech, index) => (
         <div
           key={tech.category}
-          className={`transition-all duration-500 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: `${index * 100}ms` }} // Usando style em vez de classe para evitar ambiguidade
+          className={`transition-all duration-500 opacity-${isVisible ? "100" : "0"} translate-y-${isVisible ? "0" : "6"}`}
+          style={{ transitionDelay: `${index * 100}ms` }} // Usando style para o delay em vez de classe
         >
           <Card className="p-6 bg-[#252525] border-gray-800">
             <h3 className="text-lg font-semibold mb-4">{tech.category}</h3>
