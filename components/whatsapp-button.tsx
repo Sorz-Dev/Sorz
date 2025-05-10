@@ -39,10 +39,13 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
       const windowHeight = window.innerHeight
       const documentHeight = document.documentElement.scrollHeight
       const scrollPosition = window.scrollY + windowHeight
-      const footerHeight = 100 // Altura aproximada do rodapé
+
+      // Ajustado: Reduzir a margem para que o botão suba apenas quando estiver muito próximo ao rodapé
+      // Usando 60px como margem (altura aproximada do rodapé)
+      const footerThreshold = 60
 
       // Se estiver próximo ao rodapé, ajustar a posição
-      if (documentHeight - scrollPosition < footerHeight) {
+      if (documentHeight - scrollPosition < footerThreshold) {
         setIsNearFooter(true)
       } else {
         setIsNearFooter(false)
@@ -83,7 +86,7 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
 
   return (
     <div
-      className={`fixed z-50 transition-all duration-300 ${
+      className={`fixed z-50 transition-all duration-700 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       } ${isNearFooter ? "bottom-24 md:bottom-20" : "bottom-6"} right-6`}
     >
