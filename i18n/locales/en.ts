@@ -51,7 +51,7 @@ export const messages = {
         title: "Digital Menu",
         description:
           "Modern solution for presenting items with images and descriptions, with support for multiple languages and light/dark theme.",
-        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "SEO", "Localization", "Light/Dark Theme", "Vercel"],
+        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "Localization", "Light/Dark Theme", "Vercel"],
       },
     ],
   },

@@ -91,13 +91,19 @@ export default function ProjectCard({
           <Link
             href={link}
             target="_blank"
-            className="inline-flex items-center gap-2 text-sm hover:underline text-primary"
+            className="inline-flex items-center gap-2 text-sm hover:underline font-medium text-blue-400" // Melhorado o contraste
+            aria-label={`${viewWebsite}: ${title}`} // Adicionado aria-label descritivo
           >
             {viewWebsite}
           </Link>
           {github && typeof github === "string" && (
-            <Link href={github} target="_blank" className="inline-flex items-center gap-2 text-sm hover:underline ml-4">
-              <Github className="h-4 w-4" />
+            <Link
+              href={github}
+              target="_blank"
+              className="inline-flex items-center gap-2 text-sm hover:underline ml-4 font-medium text-blue-400" // Melhorado o contraste
+              aria-label={`${viewGithub}: ${title}`} // Adicionado aria-label descritivo
+            >
+              <Github className="h-4 w-4" aria-hidden="true" />
               {viewGithub}
             </Link>
           )}

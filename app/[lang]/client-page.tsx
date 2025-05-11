@@ -75,7 +75,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
       <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-[#1d1d1d]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1d1d1d]/60">
         <div className="container flex h-14 items-center">
           <div className="flex items-center">
-            <Link href="/" className="mr-4 flex items-center">
+            <Link href="/" className="mr-4 flex items-center" aria-label="Sorz - Página inicial">
               <div className="h-6 w-12 relative">
                 <svg
                   width="100%"
@@ -84,6 +84,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-full w-full"
+                  aria-hidden="true"
                 >
                   <path
                     d="M33.4455 127.662L98.8823 169.732V206L0 142.169V113.155L98.8823 49.3239V85.5915L33.4455 127.662Z"
@@ -96,6 +97,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
                   />
                 </svg>
               </div>
+              <span className="sr-only">Sorz</span>
             </Link>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
               <button onClick={() => scrollToSection("about")} className="transition-colors hover:text-foreground/80">
@@ -117,8 +119,13 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
           </div>
           <div className="ml-auto flex items-center space-x-4">
             <LanguageSwitcher currentLocale={lang} />
-            <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
-              <Menu className="h-6 w-6" />
+            <button
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={mobileMenuOpen}
+            >
+              <Menu className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
         </div>

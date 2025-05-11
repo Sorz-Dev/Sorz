@@ -51,7 +51,7 @@ export const messages = {
         title: "Cardápio Digital",
         description:
           "Solução moderna para apresentação de itens com imagens e descrições, com suporte a múltiplos idiomas e tema claro/escuro.",
-        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "SEO", "Localização", "Tema Claro/Escuro", "Vercel"],
+        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "Localização", "Tema Claro/Escuro", "Vercel"],
       },
     ],
   },

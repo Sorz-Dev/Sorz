@@ -26,7 +26,7 @@ const config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(210, 100%, 50%)",
+          DEFAULT: "hsl(210, 100%, 60%)", // Aumentado para 60% de luminosidade para melhor contraste
           foreground: "hsl(0, 0%, 100%)",
           "50": "#eff6ff",
           "100": "#dbeafe",
@@ -64,6 +64,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        blue: {
+          400: "#60a5fa", // Cor com contraste suficiente para fundo escuro
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -83,6 +86,12 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      transitionDelay: {
+        "200": "200ms",
+        "300": "300ms",
+        "400": "400ms",
+        "500": "500ms",
       },
     },
   },
