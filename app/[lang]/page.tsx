@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     openGraph: {
       images: [
         {
-          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-IMFWPn3eh8JYSrQtejrjD6aBPiqXlJ.png",
+          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/og.png",
         },
       ],
     },
