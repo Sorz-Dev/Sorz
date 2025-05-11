@@ -13,7 +13,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   }
-  // Seção experimental removida completamente
+  // Removida a seção experimental completamente
 }
 
 export default nextConfig
