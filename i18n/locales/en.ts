@@ -185,4 +185,14 @@ export const messages = {
     cookiePreferences: "Cookie Preferences",
     save: "Save Settings",
   },
+  tech: {
+    title: "Technologies",
+    categories: {
+      frontend: "Frontend",
+      backend: "Backend",
+      devops: "DevOps",
+      tools: "Tools",
+      marketing: "Marketing & Optimization",
+    },
+  },
 }

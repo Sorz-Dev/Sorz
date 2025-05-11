@@ -13,11 +13,9 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   },
-  // Habilitar Skew Protection
   experimental: {
     timeoutProtection: true,
-  },
-  // Removido output: 'export' para voltar ao modo SSG
+  }
 }
 
 export default nextConfig

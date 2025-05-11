@@ -36,7 +36,7 @@ export default function TechStack({ categories }: TechStackProps) {
     },
     {
       category: categories.marketing,
-      skills: ["SEO", "Google Analytics", "Google Meu Negócio", "Segurança", "Desempenho", "Otimização"],
+      skills: ["SEO", "Google Analytics", "Google Business Profile", "Security", "Performance", "Optimization"],
     },
   ]
 

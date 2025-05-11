@@ -19,6 +19,22 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [cookieConsentShown, setCookieConsentShown] = useState(false)
 
+  // Tradução para as tecnologias específicas
+  const marketingTechTranslations = {
+    pt: {
+      googleBusiness: "Google Meu Negócio",
+      security: "Segurança",
+      performance: "Desempenho",
+      optimization: "Otimização",
+    },
+    en: {
+      googleBusiness: "Google Business Profile",
+      security: "Security",
+      performance: "Performance",
+      optimization: "Optimization",
+    },
+  }
+
   useEffect(() => {
     // Verificar se o usuário já deu consentimento
     const consent = localStorage.getItem("cookie-consent")
