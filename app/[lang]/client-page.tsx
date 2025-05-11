@@ -9,37 +9,55 @@ import TagList from "./components/tag-list"
 import Image from "next/image"
 import { i18n, type Locale } from "@/i18n"
 import LanguageSwitcher from "./components/language-switcher"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { CookieConsent } from "@/components/cookie-consent"
 import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ExpandableText } from "@/app/[lang]/components/ui/expandable-text"
 
 export default function ClientPage({ params }: { params: { lang: Locale } }) {
   // Garantir que estamos usando um idioma válido
   const lang = i18n.locales.includes(params.lang) ? params.lang : i18n.defaultLocale
   const t = i18n.messages[lang]
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [cookieConsentShown, setCookieConsentShown] = useState(false)
+  const [stylesLoaded, setStylesLoaded] = useState(false)
+  const initialRenderRef = useRef(true)
+
+  // Garantir que o Tailwind seja aplicado corretamente
+  useEffect(() => {
+    if (initialRenderRef.current) {
+      initialRenderRef.current = false
+
+      // Forçar o navegador a recalcular os estilos após o carregamento inicial
+      const timer = setTimeout(() => {
+        // Adicionar e remover uma classe temporária para forçar o recálculo
+        document.body.classList.add("force-recalc")
+        setTimeout(() => {
+          document.body.classList.remove("force-recalc")
+          setStylesLoaded(true)
+        }, 50)
+      }, 100)
+
+      return () => clearTimeout(timer)
+    }
+  }, [])
 
   // Garantir que o texto seja renderizado corretamente em ambos os idiomas
   useEffect(() => {
     // Forçar um re-render quando o idioma mudar para garantir que os estilos sejam aplicados corretamente
-    if (typeof window !== "undefined") {
-      // Pequeno hack para forçar o reflow do layout
-      document.body.style.display = "none"
+    document.documentElement.classList.remove("lang-pt", "lang-en")
+    document.documentElement.classList.add(`lang-${lang}`)
+
+    // Pequeno hack para forçar o reflow do layout
+    const timer = setTimeout(() => {
+      document.body.style.opacity = "0.99"
       setTimeout(() => {
-        document.body.style.display = ""
+        document.body.style.opacity = "1"
       }, 10)
-    }
-  }, [lang])
+    }, 0)
 
-  // Adicionar classe específica para o idioma no elemento raiz
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      document.documentElement.classList.remove("lang-pt", "lang-en")
-      document.documentElement.classList.add(`lang-${lang}`)
-    }
+    return () => clearTimeout(timer)
   }, [lang])
-
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [cookieConsentShown, setCookieConsentShown] = useState(false)
 
   // Tradução para as tecnologias específicas
   const marketingTechTranslations = {
@@ -113,7 +131,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
   }
 
   return (
-    <div className="min-h-screen bg-[#1d1d1d]">
+    <div className={`min-h-screen bg-[#1d1d1d] ${stylesLoaded ? "styles-loaded" : "styles-loading"}`}>
       <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-[#1d1d1d]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1d1d1d]/60">
         <div className="container flex h-14 items-center">
           <div className="flex items-center">
@@ -294,41 +312,83 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.webDevelopment.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.webDevelopment.description}</p>
+                <ExpandableText
+                  text={t.services.webDevelopment.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.webDevelopment} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.ecommerce.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.ecommerce.description}</p>
+                <ExpandableText
+                  text={t.services.ecommerce.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.ecommerce} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.mobileDevelopment.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.mobileDevelopment.description}</p>
+                <ExpandableText
+                  text={t.services.mobileDevelopment.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.mobileDevelopment} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.backend.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.backend.description}</p>
+                <ExpandableText
+                  text={t.services.backend.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.backend} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.seo.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.seo.description}</p>
+                <ExpandableText
+                  text={t.services.seo.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.seo} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.marketing.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.marketing.description}</p>
+                <ExpandableText
+                  text={t.services.marketing.description}
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.marketing} />
               </div>
               <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
                 <h3 className="text-xl font-semibold mb-3">Freelance</h3>
-                <p className="text-gray-300 mb-4">
-                  {lang === "pt"
-                    ? "Serviços de desenvolvimento freelance para clientes no Brasil e no mundo todo. Atendimento presencial em Campinas e região, e trabalho remoto para qualquer lugar do planeta."
-                    : "Freelance development services for clients in Brazil and worldwide. In-person service in Campinas region, and remote work for anywhere in the world."}
-                </p>
+                <ExpandableText
+                  text={
+                    lang === "pt"
+                      ? "Serviços de desenvolvimento freelance para clientes no Brasil e no mundo todo. Atendimento presencial em Campinas e região, e trabalho remoto para qualquer lugar do planeta."
+                      : "Freelance development services for clients in Brazil and worldwide. In-person service in Campinas region, and remote work for anywhere in the world."
+                  }
+                  maxLines={4}
+                  className="mb-4"
+                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
+                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
+                />
                 <TagList tags={serviceTags.freelance} />
               </div>
             </div>

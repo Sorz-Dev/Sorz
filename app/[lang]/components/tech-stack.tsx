@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react"
+import { Tag } from "./ui/tag"
 
 interface TechStackProps {
   categories: {
@@ -80,18 +81,13 @@ export default function TechStack({ categories }: TechStackProps) {
         <div
           key={tech.category}
           className={`transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
-          style={{ transitionDelay: `${index * 100}ms` }} // Usando style para o delay em vez de classe
+          style={{ transitionDelay: `${index * 100}ms` }}
         >
           <Card className="p-6 bg-[#252525] border-gray-800">
             <h3 className="text-lg font-semibold mb-4">{tech.category}</h3>
             <div className="flex flex-wrap gap-2">
               {tech.skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-sm font-medium text-gray-300 ring-1 ring-inset ring-gray-700"
-                >
-                  {skill}
-                </span>
+                <Tag key={skill}>{skill}</Tag>
               ))}
             </div>
           </Card>

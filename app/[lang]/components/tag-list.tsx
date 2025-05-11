@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { Tag } from "./ui/tag"
 
 interface TagListProps {
   tags: string[]
@@ -16,22 +17,13 @@ export default function TagList({ tags, maxVisible = 6 }: TagListProps) {
   return (
     <div className="flex flex-wrap gap-2">
       {visibleTags.map((tag) => (
-        <span
-          key={tag}
-          className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700"
-        >
-          {tag}
-        </span>
+        <Tag key={tag}>{tag}</Tag>
       ))}
 
       {hasManyTags && (
-        <button
-          onClick={() => setShowAllTags(!showAllTags)}
-          className="inline-flex items-center rounded-md bg-blue-900/60 backdrop-blur-sm px-2 py-1 text-xs font-medium text-blue-200 ring-1 ring-inset ring-blue-500/70 hover:bg-blue-800/70 cursor-pointer transition-all shadow-sm hover:shadow-blue-900/20 hover:shadow-md"
-          aria-expanded={showAllTags}
-        >
+        <Tag variant="button" onClick={() => setShowAllTags(!showAllTags)} expanded={showAllTags}>
           {showAllTags ? "Ver menos" : "Ver mais"}
-        </button>
+        </Tag>
       )}
     </div>
   )

@@ -20,9 +20,15 @@ export function middleware(request: NextRequest) {
   // Obter o idioma preferido do usuário com base no Accept-Language
   const acceptLanguage = request.headers.get("accept-language") || ""
 
+  // Extrair o idioma principal (antes do primeiro ;)
+  const primaryLanguage = acceptLanguage.split(";")[0].trim()
+
+  // Extrair o código de idioma (antes do primeiro ,)
+  const languageCode = primaryLanguage.split(",")[0].trim().toLowerCase()
+
   // Verificar se o idioma é português (qualquer variante)
   // Procura por "pt" ou "pt-BR" ou "pt-PT" no início da string de idioma
-  const isPortuguese = /^pt(-[A-Z]{2})?/i.test(acceptLanguage.split(",")[0])
+  const isPortuguese = languageCode.startsWith("pt")
 
   // Definir o locale com base na verificação - se não for português, usa inglês
   const locale = isPortuguese ? "pt" : "en"

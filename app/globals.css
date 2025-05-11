@@ -36,6 +36,24 @@
   }
 }
 
+/* Garantir que os estilos sejam aplicados corretamente */
+.styles-loading {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.styles-loaded {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Forçar o recálculo de estilos */
+.force-recalc {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
 .scroll-preview {
   overflow: hidden;
   position: relative;
@@ -90,8 +108,6 @@ html {
   @apply shadow-md bg-opacity-70;
 }
 
-/* Adicione estas regras no final do arquivo para garantir que o texto seja renderizado corretamente em inglês */
-
 /* Correções específicas para o idioma inglês */
 html.lang-en {
   /* Garantir que as fontes sejam carregadas corretamente */
@@ -106,48 +122,397 @@ html.lang-en span,
 html.lang-en button,
 html.lang-en a {
   /* Evitar quebra de texto e garantir renderização adequada */
-  word-break: normal;
-  white-space: normal;
-  overflow-wrap: break-word;
-  max-width: 100%;
+  word-break: normal !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+/* Exceções para elementos inline */
+html.lang-en a.inline-block,
+html.lang-en span.inline-flex,
+html.lang-en button.inline-flex {
+  display: inline-block !important;
 }
 
 /* Garantir que o conteúdo principal tenha largura adequada */
 html.lang-en main {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
 }
 
 /* Corrigir o layout do cabeçalho em inglês */
 html.lang-en header {
-  width: 100%;
-  overflow: visible;
+  width: 100% !important;
+  overflow: visible !important;
 }
 
 /* Garantir que os botões de navegação tenham espaço suficiente */
 html.lang-en nav button,
 html.lang-en nav a {
-  white-space: nowrap;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  white-space: nowrap !important;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 }
 
 /* Corrigir o layout do hero em inglês */
 html.lang-en #about h1,
 html.lang-en #about p {
-  max-width: 100%;
-  overflow: visible;
+  max-width: 100% !important;
+  overflow: visible !important;
 }
 
 /* Garantir que as imagens não quebrem o layout */
 html.lang-en .scroll-preview {
-  max-width: 100%;
-  overflow: hidden;
+  max-width: 100% !important;
+  overflow: hidden !important;
 }
 
 /* Corrigir o layout dos cards de projeto */
 html.lang-en .card {
-  width: 100%;
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* Garantir que os textos em inglês sejam exibidos corretamente */
+html.lang-en .text-3xl,
+html.lang-en .text-4xl,
+html.lang-en .text-5xl,
+html.lang-en .text-6xl {
+  line-height: 1.2 !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en p {
+  line-height: 1.5 !important;
+}
+
+/* Garantir que os botões em inglês tenham espaçamento adequado */
+html.lang-en button {
+  line-height: 1.5 !important;
+}
+
+/* Garantir que os links em inglês tenham espaçamento adequado */
+html.lang-en a {
+  line-height: 1.5 !important;
+}
+
+/* Garantir que os títulos em inglês tenham espaçamento adequado */
+html.lang-en h1,
+html.lang-en h2,
+html.lang-en h3 {
+  line-height: 1.2 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-sm,
+html.lang-en .text-xs,
+html.lang-en .text-base,
+html.lang-en .text-lg,
+html.lang-en .text-xl,
+html.lang-en .text-2xl {
+  line-height: 1.5 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .font-semibold,
+html.lang-en .font-bold,
+html.lang-en .font-medium {
+  letter-spacing: -0.01em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-tighter {
+  letter-spacing: -0.02em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-tight {
+  letter-spacing: -0.01em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-normal {
+  letter-spacing: 0 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-wide {
+  letter-spacing: 0.01em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-wider {
+  letter-spacing: 0.02em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .tracking-widest {
+  letter-spacing: 0.03em !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-none {
+  line-height: 1 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-tight {
+  line-height: 1.25 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-snug {
+  line-height: 1.375 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-normal {
+  line-height: 1.5 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-relaxed {
+  line-height: 1.625 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .leading-loose {
+  line-height: 2 !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-foreground {
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-muted-foreground {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-primary {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-secondary {
+  color: hsl(var(--secondary)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-accent {
+  color: hsl(var(--accent)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequado */
+html.lang-en .text-destructive {
+  color: hsl(var(--destructive)) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-gray-300 {
+  color: rgb(209 213 219) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-gray-400 {
+  color: rgb(156 163 175) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-blue-300 {
+  color: rgb(147 197 253) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-blue-400 {
+  color: rgb(96 165 250) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-blue-500 {
+  color: rgb(59 130 246) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-white {
+  color: rgb(255 255 255) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-black {
+  color: rgb(0 0 0) !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-transparent {
+  color: transparent !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-current {
+  color: currentColor !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-inherit {
+  color: inherit !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-initial {
+  color: initial !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-unset {
+  color: unset !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert {
+  color: revert !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert-layer {
+  color: revert-layer !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-inherit {
+  color: inherit !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-initial {
+  color: initial !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-unset {
+  color: unset !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert {
+  color: revert !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert-layer {
+  color: revert-layer !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-inherit {
+  color: inherit !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-initial {
+  color: initial !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-unset {
+  color: unset !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert {
+  color: revert !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert-layer {
+  color: revert-layer !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-inherit {
+  color: inherit !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-initial {
+  color: initial !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-unset {
+  color: unset !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert {
+  color: revert !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert-layer {
+  color: revert-layer !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-inherit {
+  color: inherit !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-initial {
+  color: initial !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-unset {
+  color: unset !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert {
+  color: revert !important;
+}
+
+/* Garantir que os textos em inglês tenham espaçamento adequada */
+html.lang-en .text-revert-layer {
+  color: revert-layer !important;
+}
+
+/* Vamos substituir as bordas azuis por cinza escuro (slate-900)
+   Adicionando estas regras no final do arquivo */
+
+/* Substituir as regras de cores slate por zinc */
+
+/* Substituir bordas azuis por cinza escuro */
+.ring-blue-500,
+.ring-blue-500\/70,
+.ring-blue-600,
+.ring-blue-700,
+.ring-inset.ring-blue-500,
+.ring-inset.ring-blue-500\/70 {
+  --tw-ring-color: rgb(24 24 27) !important; /* zinc-900 */
+}
+
+.border-blue-500,
+.border-blue-600,
+.border-blue-700 {
+  border-color: rgb(24 24 27) !important; /* zinc-900 */
+}
+
+/* Corrigir o botão do WhatsApp na versão em inglês */
+html.lang-en .fixed button span.font-medium,
+html.lang-en .fixed button svg {
+  display: inline-block !important;
+}
+
+html.lang-en .fixed button {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
 }
