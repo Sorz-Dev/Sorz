@@ -33,8 +33,6 @@ export const metadata: Metadata = {
     title: "Sorz - Desenvolvimento Web",
     description: "Portfólio de projetos de desenvolvimento web da Sorz",
     images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/og.png"],
-    creator: "@Sorz_dev",
-    site: "@Sorz_dev",
   },
     generator: 'v0.dev'
 }

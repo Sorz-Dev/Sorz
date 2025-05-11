@@ -45,8 +45,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       title: messages.meta.title,
       description: messages.meta.description,
       images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/og.png"],
-      creator: "@Sorz_dev",
-      site: "@Sorz_dev",
     },
     robots: {
       index: true,
