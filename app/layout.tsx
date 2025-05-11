@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import type React from "react"
@@ -10,15 +10,9 @@ export const metadata: Metadata = {
   title: "Sorz - Desenvolvimento Web",
   description: "Portfólio de projetos de desenvolvimento web da Sorz",
   icons: {
-    icon: "/favicon.ico",
+    icon: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
   },
     generator: 'v0.dev'
-}
-
-export const viewport: Viewport = {
-  themeColor: "#3b82f6",
-  width: "device-width",
-  initialScale: 1,
 }
 
 export default function RootLayout({

@@ -11,10 +11,11 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     title: messages.meta.title,
     description: messages.meta.description,
     openGraph: {
-      images: ["/logo-og.webp"],
-    },
-    twitter: {
-      images: ["/logo-og.webp"],
+      images: [
+        {
+          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png",
+        },
+      ],
     },
   }
 }

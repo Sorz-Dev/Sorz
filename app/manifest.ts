@@ -11,9 +11,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#3b82f6",
     icons: [
       {
-        src: "/favicon.ico",
+        src: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
         sizes: "any",
-        type: "image/x-icon",
+        type: "image/svg+xml",
       },
     ],
   }

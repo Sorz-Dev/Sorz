@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       siteName: "Sorz",
       images: [
         {
-          url: "/logo-og.webp",
+          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png",
           width: 1200,
           height: 630,
           alt: messages.meta.title,
@@ -43,18 +43,10 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       card: "summary_large_image",
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ["/logo-og.webp"],
+      images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png"],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+    icons: {
+      icon: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
     },
   }
 }
@@ -72,11 +64,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang} className="dark">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="/logo-og.webp" />
-        <meta name="twitter:image" content="/logo-og.webp" />
-      </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
       </body>
