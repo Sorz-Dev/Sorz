@@ -101,7 +101,7 @@ export default function RootLayout({
   params: { lang: Locale }
 }) {
   return (
-    <html lang={params.lang} className="dark">
+    <html lang={params.lang} className={`dark lang-${params.lang}`}>
       <head>
         {/* Preconectar a domínios externos */}
         <link rel="preconnect" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" />

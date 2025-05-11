@@ -80,3 +80,74 @@ html {
 .transition-delay-500 {
   transition-delay: 500ms;
 }
+
+/* Efeito de glassmorphism para botões */
+.glassmorphism {
+  @apply bg-opacity-60 backdrop-blur-sm shadow-sm ring-1 ring-white/10 transition-all;
+}
+
+.glassmorphism:hover {
+  @apply shadow-md bg-opacity-70;
+}
+
+/* Adicione estas regras no final do arquivo para garantir que o texto seja renderizado corretamente em inglês */
+
+/* Correções específicas para o idioma inglês */
+html.lang-en {
+  /* Garantir que as fontes sejam carregadas corretamente */
+  font-display: swap;
+}
+
+html.lang-en h1,
+html.lang-en h2,
+html.lang-en h3,
+html.lang-en p,
+html.lang-en span,
+html.lang-en button,
+html.lang-en a {
+  /* Evitar quebra de texto e garantir renderização adequada */
+  word-break: normal;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+/* Garantir que o conteúdo principal tenha largura adequada */
+html.lang-en main {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Corrigir o layout do cabeçalho em inglês */
+html.lang-en header {
+  width: 100%;
+  overflow: visible;
+}
+
+/* Garantir que os botões de navegação tenham espaço suficiente */
+html.lang-en nav button,
+html.lang-en nav a {
+  white-space: nowrap;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* Corrigir o layout do hero em inglês */
+html.lang-en #about h1,
+html.lang-en #about p {
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Garantir que as imagens não quebrem o layout */
+html.lang-en .scroll-preview {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Corrigir o layout dos cards de projeto */
+html.lang-en .card {
+  width: 100%;
+  max-width: 100%;
+}

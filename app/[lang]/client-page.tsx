@@ -17,6 +17,27 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
   // Garantir que estamos usando um idioma válido
   const lang = i18n.locales.includes(params.lang) ? params.lang : i18n.defaultLocale
   const t = i18n.messages[lang]
+
+  // Garantir que o texto seja renderizado corretamente em ambos os idiomas
+  useEffect(() => {
+    // Forçar um re-render quando o idioma mudar para garantir que os estilos sejam aplicados corretamente
+    if (typeof window !== "undefined") {
+      // Pequeno hack para forçar o reflow do layout
+      document.body.style.display = "none"
+      setTimeout(() => {
+        document.body.style.display = ""
+      }, 10)
+    }
+  }, [lang])
+
+  // Adicionar classe específica para o idioma no elemento raiz
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      document.documentElement.classList.remove("lang-pt", "lang-en")
+      document.documentElement.classList.add(`lang-${lang}`)
+    }
+  }, [lang])
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [cookieConsentShown, setCookieConsentShown] = useState(false)
 
