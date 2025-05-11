@@ -53,6 +53,9 @@ export default function ProjectCard({
     }
   }, [])
 
+  // Determinar se esta é a imagem LCP (Largest Contentful Paint)
+  const isLCP = image.includes("delivery")
+
   return (
     <div ref={cardRef} className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
       <Card className="overflow-hidden border border-gray-800 bg-[#252525]">
@@ -64,7 +67,8 @@ export default function ProjectCard({
               width={600}
               height={300}
               className="w-full object-top"
-              priority={image.includes("delivery")} // Prioriza a imagem do LCP
+              priority={isLCP} // Prioriza a imagem do LCP
+              loading={isLCP ? undefined : "lazy"} // Não usar lazy loading para a imagem LCP
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>

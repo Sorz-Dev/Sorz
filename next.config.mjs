@@ -16,7 +16,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   reactStrictMode: true,
-  swcMinify: true,
+  // Removido swcMinify pois já é padrão no Next.js 15
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
