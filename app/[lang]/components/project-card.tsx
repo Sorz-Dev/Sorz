@@ -57,7 +57,19 @@ export default function ProjectCard({
       <Card className="overflow-hidden border border-gray-800 bg-[#252525]">
         <Link href={link} target="_blank">
           <div className="scroll-preview h-48 rounded-lg overflow-hidden">
-            <img src={image || "/placeholder.svg"} alt={title} className="w-full object-top" loading="lazy" />
+            {/* Adicionando width e height explícitos para melhorar CLS */}
+            <img
+              src={image || "/placeholder.svg"}
+              alt={title}
+              className="w-full object-top"
+              loading="lazy"
+              width="600"
+              height="300"
+              // Corrigido: fetchPriority com P maiúsculo (camelCase)
+              {...(title === "Ecossistema Delivery WebApp"
+                ? { loading: "eager", fetchPriority: "high" }
+                : { loading: "lazy" })}
+            />
           </div>
         </Link>
         <CardContent className="p-4">

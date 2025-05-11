@@ -2,6 +2,16 @@ import { type NextRequest, NextResponse } from "next/server"
 import { i18n } from "@/i18n"
 
 export function middleware(request: NextRequest) {
+  // Adicionar headers de cache para recursos estáticos
+  const url = request.nextUrl.pathname
+
+  // Aplicar cache para recursos estáticos
+  if (url.includes("/_next/static") || url.includes("/images/") || url.endsWith(".js") || url.endsWith(".css")) {
+    const response = NextResponse.next()
+    response.headers.set("Cache-Control", "public, max-age=31536000, immutable")
+    return response
+  }
+
   const pathname = request.nextUrl.pathname
 
   // Verificar se o caminho já tem um prefixo de idioma

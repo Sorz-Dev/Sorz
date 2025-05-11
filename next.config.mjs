@@ -8,12 +8,41 @@ const nextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
-    // Habilitar lazy loading para imagens
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: true,
-  }
-  // Seção experimental removida completamente
+    // Habilitando otimização de imagens
+    unoptimized: false,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'd7hd88ngyqaw6jtz.public.blob.vercel-storage.com',
+      },
+    ],
+  },
+  // Otimizações para melhorar a performance
+  swcMinify: true,
+  compiler: {
+    // Remover console.logs em produção
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Otimizações para reduzir o JavaScript
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: ['lucide-react', '@headlessui/react'],
+  },
+  // Configuração para evitar JavaScript legado
+  webpack: (config, { dev, isServer }) => {
+    // Apenas aplicar em produção e no cliente
+    if (!dev && !isServer) {
+      // Configurar o Terser para remover polyfills desnecessários
+      config.optimization.minimizer.forEach((minimizer) => {
+        if (minimizer.constructor.name === 'TerserPlugin') {
+          minimizer.options.terserOptions.compress.drop_console = true;
+        }
+      });
+    }
+    return config;
+  },
 }
 
 export default nextConfig

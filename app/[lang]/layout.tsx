@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { i18n, type Locale } from "@/i18n"
 import "../globals.css"
 import type React from "react"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -76,8 +77,34 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang} className="dark">
+      <head>
+        {/* Preload critical resources - corrigido para fetchPriority com P maiúsculo */}
+        <link rel="preload" href="/images/delivery.jpeg" as="image" fetchPriority="high" />
+        <link rel="preconnect" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" />
+      </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
+
+        {/* Script para carregar recursos não críticos de forma assíncrona */}
+        <Script id="load-non-critical" strategy="afterInteractive">
+          {`
+            function loadNonCriticalResources() {
+              // Carregar fontes adicionais
+              const fontLink = document.createElement('link');
+              fontLink.rel = 'stylesheet';
+              fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+              document.head.appendChild(fontLink);
+            }
+            
+            // Usar requestIdleCallback para carregar recursos quando o navegador estiver ocioso
+            if ('requestIdleCallback' in window) {
+              requestIdleCallback(loadNonCriticalResources);
+            } else {
+              setTimeout(loadNonCriticalResources, 2000);
+            }
+          `}
+        </Script>
       </body>
     </html>
   )
