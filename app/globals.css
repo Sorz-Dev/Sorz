@@ -516,3 +516,40 @@ html.lang-en .fixed button {
   align-items: center !important;
   white-space: nowrap !important;
 }
+
+/* Adicionar regras específicas para garantir que os links em inglês mantenham o layout correto */
+
+/* Garantir que os ícones e textos nos botões fiquem inline em inglês */
+html.lang-en a.inline-flex,
+html.lang-en button.inline-flex {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+html.lang-en a.inline-flex svg,
+html.lang-en button.inline-flex svg,
+html.lang-en a.inline-flex span,
+html.lang-en button.inline-flex span {
+  display: inline-block !important;
+}
+
+/* Corrigir especificamente o link do GitHub */
+html.lang-en a svg.h-4.w-4 {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  margin-right: 0.25rem !important;
+}
+
+/* Garantir que todos os elementos inline permaneçam inline */
+html.lang-en .inline-block,
+html.lang-en .inline-flex,
+html.lang-en .inline {
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+/* Garantir que os elementos dentro de links e botões permaneçam inline */
+html.lang-en a *,
+html.lang-en button * {
+  max-width: none !important;
+}

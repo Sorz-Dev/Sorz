@@ -113,8 +113,8 @@ export default function ProjectCard({
               className="inline-flex items-center gap-2 text-sm hover:underline ml-4 font-medium text-blue-400"
               aria-label={`${viewGithub}: ${title}`}
             >
-              <Github className="h-4 w-4" aria-hidden="true" />
-              {viewGithub}
+              <Github className="h-4 w-4 inline-block" aria-hidden="true" />
+              <span className="inline-block">{viewGithub}</span>
             </Link>
           )}
         </CardFooter>
