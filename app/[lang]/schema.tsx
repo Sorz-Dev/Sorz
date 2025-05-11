@@ -8,7 +8,12 @@ export function generateSchemaMarkup(lang: Locale) {
     "@type": "Organization",
     name: "Sorz",
     url: "https://sorz.com.br",
-    logo: "https://sorz.com.br/images/logo-og.webp",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://sorz.com.br/logo-og.webp",
+      width: 1200,
+      height: 630,
+    },
     description: t.meta.description,
     address: {
       "@type": "PostalAddress",
@@ -17,15 +22,11 @@ export function generateSchemaMarkup(lang: Locale) {
       addressLocality: "Campinas",
       postalCode: "13000-000",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: "-22.9099",
-      longitude: "-47.0626",
-    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: "soarxz.dev@gmail.com",
+      telephone: "+5519998817808",
     },
     sameAs: [
       "https://github.com/Sorz-Dev",
@@ -33,7 +34,6 @@ export function generateSchemaMarkup(lang: Locale) {
       "https://x.com/Sorz_dev",
       "https://www.instagram.com/sorz.dev/",
     ],
-    knowsAbout: ["Web Development", "Progressive Web Apps", "Native Applications", "Digital Solutions"],
   }
 
   return JSON.stringify(schema)

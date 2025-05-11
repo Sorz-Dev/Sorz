@@ -4,7 +4,7 @@ import { i18n } from "@/i18n"
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sorz.com.br"
 
-  const routes = ["", "#about", "#projects", "#contact"]
+  const routes = ["", "/privacy", "/terms", "/privacy-settings"]
 
   const sitemap: MetadataRoute.Sitemap = []
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { i18n, type Locale } from "@/i18n"
 import ClientPage from "./client-page"
+import Script from "next/script"
+import { generateSchemaMarkup } from "./schema"
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
   const messages = i18n.messages[params.lang]
@@ -8,12 +10,24 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
   return {
     title: messages.meta.title,
     description: messages.meta.description,
+    openGraph: {
+      images: ["/logo-og.webp"],
+    },
+    twitter: {
+      images: ["/logo-og.webp"],
+    },
   }
 }
 
 export default function Page({ params }: { params: { lang: Locale } }) {
   // Verificar se o idioma existe e usar o padrão se não existir
   const lang = i18n.locales.includes(params.lang) ? params.lang : i18n.defaultLocale
+  const schemaMarkup = generateSchemaMarkup(lang)
 
-  return <ClientPage params={{ lang }} />
+  return (
+    <>
+      <Script id="schema-org" type="application/ld+json" dangerouslySetInnerHTML={{ __html: schemaMarkup }} />
+      <ClientPage params={{ lang }} />
+    </>
+  )
 }

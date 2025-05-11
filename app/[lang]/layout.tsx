@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils"
-import type { Metadata, Viewport } from "next"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { i18n, type Locale } from "@/i18n"
 import "../globals.css"
@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
   const messages = i18n.messages[params.lang]
+  const locale = params.lang === "pt" ? "pt_BR" : "en_US"
 
   return {
     title: messages.meta.title,
@@ -16,26 +17,33 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     keywords: messages.meta.keywords,
     metadataBase: new URL("https://sorz.com.br"),
     alternates: {
-      canonical: "/",
+      canonical: `/${params.lang}`,
       languages: {
         pt: "/pt",
         en: "/en",
       },
     },
     openGraph: {
+      type: "website",
+      url: `https://sorz.com.br/${params.lang}`,
       title: messages.meta.title,
       description: messages.meta.description,
-      url: "https://sorz.com.br",
       siteName: "Sorz",
-      image: "https://sorz.com.br/logo-og.webp",
-      locale: params.lang,
-      type: "website",
+      images: [
+        {
+          url: "/logo-og.webp",
+          width: 1200,
+          height: 630,
+          alt: messages.meta.title,
+        },
+      ],
+      locale,
     },
     twitter: {
       card: "summary_large_image",
       title: messages.meta.title,
       description: messages.meta.description,
-      image: "https://sorz.com.br/logo-og.webp",
+      images: ["/logo-og.webp"],
     },
     robots: {
       index: true,
@@ -48,30 +56,6 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
         "max-snippet": -1,
       },
     },
-    verification: {
-      google: "verification_token",
-    },
-    icons: {
-      icon: "/favicon.svg",
-      shortcut: "/favicon.svg",
-      apple: "/favicon.svg",
-    },
-    other: {
-      "geo.region": "BR-SP",
-      "geo.placename": "Campinas, São Paulo",
-      "geo.position": "-22.9099;-47.0626",
-      ICBM: "-22.9099, -47.0626",
-    },
-  }
-}
-
-export function generateViewport(): Viewport {
-  return {
-    themeColor: "#3b82f6",
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 1,
-    charSet: "UTF-8",
   }
 }
 
@@ -86,35 +70,12 @@ export default function RootLayout({
   children: React.ReactNode
   params: { lang: Locale }
 }) {
-  const messages = i18n.messages[params.lang]
   return (
     <html lang={params.lang} className="dark">
       <head>
-        {/* Favicon principal (SVG) */}
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-
-        {/* Fallback para navegadores que não suportam SVG */}
-        <link rel="alternate icon" href="/favicon.ico" type="image/x-icon" />
-
-        {/* Para iOS */}
-        <link rel="apple-touch-icon" href="/favicon.svg" />
-
-        <link rel="canonical" href={`https://sorz.com.br/${params.lang}`} />
-
-        {/* Meta tags explícitas para Open Graph com prefixo og: correto */}
-        <meta property="og:image" content="https://sorz.com.br/logo-og.webp" />
-        <meta property="og:title" content={messages.meta.title} />
-        <meta property="og:description" content={messages.meta.description} />
-        <meta property="og:url" content="https://sorz.com.br" />
-        <meta property="og:site_name" content="Sorz" />
-        <meta property="og:type" content="website" />
-        <meta property="og:locale" content={params.lang} />
-
-        {/* Meta tags explícitas para Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content="https://sorz.com.br/logo-og.webp" />
-        <meta name="twitter:title" content={messages.meta.title} />
-        <meta name="twitter:description" content={messages.meta.description} />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:image" content="/logo-og.webp" />
+        <meta name="twitter:image" content="/logo-og.webp" />
       </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
