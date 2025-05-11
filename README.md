@@ -10,6 +10,13 @@ A Sorz é uma empresa de desenvolvimento digital especializada na criação de s
 
 Nossa missão é transformar ideias em produtos digitais de alta qualidade, combinando design atraente com código limpo e performático. Trabalhamos com empresas de diversos segmentos, desde pequenos negócios locais até startups em crescimento.
 
+## ⚠️ Aviso Legal
+
+**Este repositório é apenas para fins de demonstração e portfólio profissional.**
+
+Este código não é licenciado para uso, modificação ou distribuição. Todos os direitos reservados.
+O repositório está público apenas para permitir a visualização do código como parte de um portfólio profissional.
+
 ## 🚀 Projeto Principal: Ecossistema Delivery
 
 Nosso projeto principal é um ecossistema completo para delivery, desenvolvido com tecnologias modernas para oferecer uma experiência fluida tanto para clientes quanto para administradores:
@@ -68,13 +75,6 @@ Este projeto demonstra nossa capacidade de desenvolver soluções completas e es
 - **Consentimento de Cookies**: Sistema completo de gerenciamento de consentimento
 - **HTTPS**: Forçado em todas as páginas
 - **Sanitização de Entrada**: Validação de dados de formulário
-
-## ⚠️ Aviso Legal
-
-**Este repositório é apenas para fins de demonstração e portfólio profissional.**
-
-Este código não é licenciado para uso, modificação ou distribuição. Todos os direitos reservados.
-O repositório está público apenas para permitir a visualização do código como parte de um portfólio profissional.
 
 ---
 

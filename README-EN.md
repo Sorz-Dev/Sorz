@@ -10,6 +10,13 @@ Sorz is a digital development company specialized in creating modern and efficie
 
 Our mission is to transform ideas into high-quality digital products, combining attractive design with clean and performant code. We work with companies from various segments, from small local businesses to growing startups.
 
+## ⚠️ Legal Notice
+
+**This repository is for demonstration and professional portfolio purposes only.**
+
+This code is not licensed for use, modification, or distribution. All rights reserved.
+The repository is public only to allow viewing of the code as part of a professional portfolio.
+
 ## 🚀 Main Project: Delivery Ecosystem
 
 Our main project is a complete ecosystem for delivery services, developed with modern technologies to offer a fluid experience for both customers and administrators:
@@ -68,13 +75,6 @@ This project demonstrates our ability to develop complete and scalable solutions
 - **Cookie Consent**: Complete consent management system
 - **HTTPS**: Enforced on all pages
 - **Input Sanitization**: Form data validation
-
-## ⚠️ Legal Notice
-
-**This repository is for demonstration and professional portfolio purposes only.**
-
-This code is not licensed for use, modification, or distribution. All rights reserved.
-The repository is public only to allow viewing of the code as part of a professional portfolio.
 
 ---
 
