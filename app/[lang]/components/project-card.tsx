@@ -6,7 +6,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 import { Tag } from "./ui/tag"
-import { ExpandableText } from "./ui/expandable-text"
 
 interface ProjectCardProps {
   title: string
@@ -68,7 +67,7 @@ export default function ProjectCard({
 
   return (
     <div ref={cardRef} className={`transition-opacity duration-500 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-      <Card className="overflow-hidden border border-gray-800 bg-[#252525]">
+      <Card className="overflow-hidden border border-zinc-800 bg-[#252525]">
         <Link href={link} target="_blank">
           <div className="scroll-preview h-48 rounded-lg overflow-hidden">
             <Image
@@ -85,13 +84,7 @@ export default function ProjectCard({
         </Link>
         <CardContent className="p-4">
           <h3 className="font-semibold text-xl mb-2">{title}</h3>
-          <ExpandableText
-            text={description}
-            maxLines={3}
-            className="mb-4"
-            expandLabel="Leia mais"
-            collapseLabel="Leia menos"
-          />
+          <p className="text-sm text-muted-foreground mb-4">{description}</p>
           <div className="flex flex-wrap gap-2">
             {visibleTags.map((tag) => (
               <Tag key={tag}>{tag}</Tag>

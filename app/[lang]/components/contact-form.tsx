@@ -102,7 +102,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
         ref={formRef}
         className={`transition-all duration-500 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
       >
-        <Card className="p-6 bg-[#252525] border-gray-800">
+        <Card className="p-6 bg-[#252525] border-zinc-800">
           {state.succeeded ? (
             <div className="text-center py-8">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mb-4">
@@ -152,7 +152,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     required
                     placeholder={placeholders.name}
                     autoComplete="name"
-                    className={`bg-[#1d1d1d] border-gray-700 ${
+                    className={`bg-[#1d1d1d] border-zinc-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={!cookiesAccepted}
@@ -176,7 +176,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     required
                     placeholder={placeholders.email}
                     autoComplete="email"
-                    className={`bg-[#1d1d1d] border-gray-700 ${
+                    className={`bg-[#1d1d1d] border-zinc-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={!cookiesAccepted}
@@ -199,7 +199,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     type="tel"
                     placeholder={placeholders.whatsapp}
                     autoComplete="tel"
-                    className={`bg-[#1d1d1d] border-gray-700 ${
+                    className={`bg-[#1d1d1d] border-zinc-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={!cookiesAccepted}
@@ -221,7 +221,7 @@ export default function ContactForm({ labels, locale }: ContactFormProps) {
                     name="message"
                     required
                     placeholder={placeholders.message}
-                    className={`bg-[#1d1d1d] border-gray-700 ${
+                    className={`bg-[#1d1d1d] border-zinc-700 ${
                       !cookiesAccepted ? "opacity-50 cursor-not-allowed" : ""
                     }`}
                     disabled={!cookiesAccepted}

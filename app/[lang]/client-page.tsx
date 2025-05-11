@@ -12,7 +12,6 @@ import LanguageSwitcher from "./components/language-switcher"
 import { useState, useEffect, useRef } from "react"
 import { CookieConsent } from "@/components/cookie-consent"
 import { WhatsAppButton } from "@/components/whatsapp-button"
-import { ExpandableText } from "@/app/[lang]/components/ui/expandable-text"
 
 export default function ClientPage({ params }: { params: { lang: Locale } }) {
   // Garantir que estamos usando um idioma válido
@@ -132,7 +131,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
 
   return (
     <div className={`min-h-screen bg-[#1d1d1d] ${stylesLoaded ? "styles-loaded" : "styles-loading"}`}>
-      <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-[#1d1d1d]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1d1d1d]/60">
+      <header className="sticky top-0 z-50 w-full border-b border-zinc-800 bg-[#1d1d1d]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1d1d1d]/60">
         <div className="container flex h-14 items-center">
           <div className="flex items-center">
             <Link href="/" className="mr-4 flex items-center" aria-label="Sorz - Página inicial">
@@ -198,7 +197,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
 
         {/* Menu móvel */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-[#252525] border-b border-gray-800">
+          <div className="md:hidden bg-[#252525] border-b border-zinc-800">
             <nav className="flex flex-col p-4 space-y-4">
               <button onClick={() => scrollToSection("about")} className="text-left py-2">
                 {t.nav.about}
@@ -221,6 +220,9 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
       </header>
 
       <main className="container px-4 md:px-6">
+        {/* Resto do conteúdo permanece o mesmo */}
+        {/* ... */}
+
         <section id="about" className="py-6 md:py-8">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -310,85 +312,43 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
               {t.services.title}
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.webDevelopment.title}</h3>
-                <ExpandableText
-                  text={t.services.webDevelopment.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.webDevelopment.description}</p>
                 <TagList tags={serviceTags.webDevelopment} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.ecommerce.title}</h3>
-                <ExpandableText
-                  text={t.services.ecommerce.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.ecommerce.description}</p>
                 <TagList tags={serviceTags.ecommerce} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.mobileDevelopment.title}</h3>
-                <ExpandableText
-                  text={t.services.mobileDevelopment.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.mobileDevelopment.description}</p>
                 <TagList tags={serviceTags.mobileDevelopment} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.backend.title}</h3>
-                <ExpandableText
-                  text={t.services.backend.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.backend.description}</p>
                 <TagList tags={serviceTags.backend} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.seo.title}</h3>
-                <ExpandableText
-                  text={t.services.seo.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.seo.description}</p>
                 <TagList tags={serviceTags.seo} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">{t.services.marketing.title}</h3>
-                <ExpandableText
-                  text={t.services.marketing.description}
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">{t.services.marketing.description}</p>
                 <TagList tags={serviceTags.marketing} />
               </div>
-              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+              <div className="bg-[#252525] p-6 rounded-lg border border-zinc-800">
                 <h3 className="text-xl font-semibold mb-3">Freelance</h3>
-                <ExpandableText
-                  text={
-                    lang === "pt"
-                      ? "Serviços de desenvolvimento freelance para clientes no Brasil e no mundo todo. Atendimento presencial em Campinas e região, e trabalho remoto para qualquer lugar do planeta."
-                      : "Freelance development services for clients in Brazil and worldwide. In-person service in Campinas region, and remote work for anywhere in the world."
-                  }
-                  maxLines={4}
-                  className="mb-4"
-                  expandLabel={lang === "pt" ? "Leia mais" : "Read more"}
-                  collapseLabel={lang === "pt" ? "Leia menos" : "Read less"}
-                />
+                <p className="text-gray-300 mb-4">
+                  {lang === "pt"
+                    ? "Serviços de desenvolvimento freelance para clientes no Brasil e no mundo todo. Atendimento presencial em Campinas e região, e trabalho remoto para qualquer lugar do planeta."
+                    : "Freelance development services for clients in Brazil and worldwide. In-person service in Campinas region, and remote work for anywhere in the world."}
+                </p>
                 <TagList tags={serviceTags.freelance} />
               </div>
             </div>
@@ -436,7 +396,7 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
         </section>
       </main>
 
-      <footer className="border-t border-gray-800 mt-6">
+      <footer className="border-t border-zinc-800 mt-6">
         <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
           <p className="text-xs text-gray-400">{t.footer.copyright}</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
