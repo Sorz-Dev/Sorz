@@ -80,3 +80,12 @@ html {
 .transition-delay-500 {
   transition-delay: 500ms;
 }
+
+/* Efeito de glassmorphism para botões */
+.glassmorphism {
+  @apply bg-opacity-60 backdrop-blur-sm shadow-sm ring-1 ring-white/10 transition-all;
+}
+
+.glassmorphism:hover {
+  @apply shadow-md bg-opacity-70;
+}

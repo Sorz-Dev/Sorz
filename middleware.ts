@@ -21,9 +21,10 @@ export function middleware(request: NextRequest) {
   const acceptLanguage = request.headers.get("accept-language") || ""
 
   // Verificar se o idioma é português (qualquer variante)
-  const isPortuguese = acceptLanguage.toLowerCase().includes("pt")
+  // Procura por "pt" ou "pt-BR" ou "pt-PT" no início da string de idioma
+  const isPortuguese = /^pt(-[A-Z]{2})?/i.test(acceptLanguage.split(",")[0])
 
-  // Definir o locale com base na verificação
+  // Definir o locale com base na verificação - se não for português, usa inglês
   const locale = isPortuguese ? "pt" : "en"
 
   // Criar uma nova URL com o prefixo de idioma

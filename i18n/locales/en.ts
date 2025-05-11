@@ -188,27 +188,34 @@ export const messages = {
   services: {
     title: "Our Services",
     webDevelopment: {
-      title: "Web Development",
+      title: "Web Development & PWA",
       description:
-        "Creation of responsive websites, landing pages and web applications with the most modern technologies on the market.",
+        "Creation of modern and fully responsive websites that work like apps. All projects are developed as PWAs, allowing installation and better user experience on any device.",
     },
     mobileDevelopment: {
       title: "Mobile Development",
-      description: "Development of native applications for iOS and Android using React Native, Expo and NativeWind.",
-    },
-    webApps: {
-      title: "Web Apps (PWA)",
       description:
-        "Creation of progressive web applications that work offline and offer an experience similar to native applications.",
+        "Development of cross-platform applications for App Store and Play Store. Ideal for projects requiring specific hardware features or advanced native functionality.",
     },
     ecommerce: {
-      title: "E-commerce",
+      title: "Complete E-commerce",
       description:
-        "Development of complete online stores with payment integration, inventory management and administrative panel.",
+        "Complete e-commerce solution with installable PWA, increasing customer engagement and return rates. Includes admin panel, product management and payment system in a single web platform.",
+    },
+    backend: {
+      title: "Backend Development",
+      description:
+        "Creation of robust and scalable APIs to support web and mobile applications. Development of authentication systems, databases and third-party service integrations.",
     },
     seo: {
       title: "SEO Optimization",
-      description: "Search engine optimization strategies to improve your website's ranking on Google.",
+      description:
+        "Search engine optimization strategies focusing on PageSpeed, Google Business Profile and Search Console to improve your website's ranking.",
+    },
+    marketing: {
+      title: "Digital Marketing",
+      description:
+        "Creation and management of ad campaigns, social media content design and lead generation strategies to maximize your investment return.",
     },
   },
 }

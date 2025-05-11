@@ -182,29 +182,34 @@ export const messages = {
   services: {
     title: "Nossos Serviços",
     webDevelopment: {
-      title: "Desenvolvimento Web",
+      title: "Desenvolvimento Web & PWA",
       description:
-        "Criação de sites responsivos, landing pages e aplicações web com as tecnologias mais modernas do mercado.",
+        "Criação de sites modernos e totalmente responsivos que funcionam como aplicativos. Todos os projetos são desenvolvidos como PWAs, permitindo instalação e melhor experiência do usuário em qualquer dispositivo.",
     },
     mobileDevelopment: {
       title: "Desenvolvimento Mobile",
       description:
-        "Desenvolvimento de aplicativos nativos para iOS e Android utilizando React Native, Expo e NativeWind.",
-    },
-    webApps: {
-      title: "Web Apps (PWA)",
-      description:
-        "Criação de aplicativos web progressivos que funcionam offline e oferecem experiência similar a aplicativos nativos.",
+        "Desenvolvimento de aplicativos multiplataforma para App Store e Play Store. Ideal para projetos que necessitam de recursos específicos de hardware ou funcionalidades nativas avançadas.",
     },
     ecommerce: {
-      title: "E-commerce",
+      title: "E-commerce Completo",
       description:
-        "Desenvolvimento de lojas virtuais completas com integração de pagamentos, gestão de estoque e painel administrativo.",
+        "Solução completa de e-commerce com PWA instalável, aumentando o engajamento e as taxas de retorno. Inclui painel administrativo, gestão de produtos e sistema de pagamentos em uma única plataforma web.",
+    },
+    backend: {
+      title: "Desenvolvimento Back-end",
+      description:
+        "Criação de APIs robustas e escaláveis para suportar aplicações web e mobile. Desenvolvimento de sistemas de autenticação, bancos de dados e integrações com serviços de terceiros.",
     },
     seo: {
       title: "Otimização para SEO",
       description:
-        "Estratégias de otimização para mecanismos de busca para melhorar o posicionamento do seu site no Google.",
+        "Estratégias de otimização para mecanismos de busca com foco em PageSpeed, Google Business Profile e Search Console para melhorar o posicionamento do seu site.",
+    },
+    marketing: {
+      title: "Marketing Digital",
+      description:
+        "Criação e gestão de campanhas de anúncios, design de conteúdo para redes sociais e estratégias de geração de leads para maximizar o retorno do seu investimento.",
     },
   },
 }

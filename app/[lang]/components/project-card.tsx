@@ -29,6 +29,14 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
+  const [showAllTags, setShowAllTags] = useState(false)
+
+  // Definir o número máximo de tags a serem exibidas inicialmente
+  const maxVisibleTags = 6
+  const hasManyTags = tags.length > maxVisibleTags
+
+  // Tags a serem exibidas com base no estado atual
+  const visibleTags = showAllTags ? tags : tags.slice(0, maxVisibleTags)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -77,7 +85,7 @@ export default function ProjectCard({
           <h3 className="font-semibold text-xl mb-2">{title}</h3>
           <p className="text-sm text-muted-foreground mb-4">{description}</p>
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag) => (
+            {visibleTags.map((tag) => (
               <span
                 key={tag}
                 className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700"
@@ -85,6 +93,15 @@ export default function ProjectCard({
                 {tag}
               </span>
             ))}
+
+            {hasManyTags && (
+              <button
+                onClick={() => setShowAllTags(!showAllTags)}
+                className="inline-flex items-center rounded-md bg-blue-900/60 backdrop-blur-sm px-2 py-1 text-xs font-medium text-blue-200 ring-1 ring-inset ring-blue-500/70 hover:bg-blue-800/70 cursor-pointer transition-all shadow-sm hover:shadow-blue-900/20 hover:shadow-md"
+              >
+                {showAllTags ? "Ver menos" : "Ver mais"}
+              </button>
+            )}
           </div>
         </CardContent>
         <CardFooter className="p-4 pt-0">

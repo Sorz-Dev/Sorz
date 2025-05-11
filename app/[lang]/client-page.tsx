@@ -5,6 +5,7 @@ import Link from "next/link"
 import ContactForm from "./components/contact-form"
 import ProjectCard from "./components/project-card"
 import TechStack from "./components/tech-stack"
+import TagList from "./components/tag-list"
 import Image from "next/image"
 import { i18n, type Locale } from "@/i18n"
 import LanguageSwitcher from "./components/language-switcher"
@@ -70,6 +71,26 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
     return () => window.removeEventListener("resize", handleResize)
   }, [])
 
+  // Definir as tags para cada serviço
+  const serviceTags = {
+    webDevelopment: [
+      "React.js",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn/UI",
+      "Headless UI",
+      "PWA",
+      "Responsive",
+    ],
+    ecommerce: ["Next.js", "PWA", "Node.js", "PostgreSQL", "Stripe", "Admin Panel", "SEO", "Marketing"],
+    mobileDevelopment: ["React Native", "Expo", "NativeWind", "Node.js", "App Store", "Play Store"],
+    backend: ["Node.js", "Nest.js", "Bun", "PostgreSQL", "Auth0", "API REST"],
+    seo: ["PageSpeed", "Google Business", "Search Console", "Schema.org", "Local SEO"],
+    marketing: ["Google Ads", "Meta Ads", "Social Media", "Lead Generation", "Content Design"],
+    freelance: ["Campinas", "Brasil", "Worldwide", "Remote"],
+  }
+
   return (
     <div className="min-h-screen bg-[#1d1d1d]">
       <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-[#1d1d1d]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1d1d1d]/60">
@@ -109,6 +130,12 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
               >
                 {t.nav.projects}
               </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="transition-colors hover:text-foreground/80"
+              >
+                {t.services.title}
+              </button>
               <button onClick={() => scrollToSection("tech")} className="transition-colors hover:text-foreground/80">
                 {t.nav.tech}
               </button>
@@ -139,6 +166,9 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
               </button>
               <button onClick={() => scrollToSection("projects")} className="text-left py-2">
                 {t.nav.projects}
+              </button>
+              <button onClick={() => scrollToSection("services")} className="text-left py-2">
+                {t.services.title}
               </button>
               <button onClick={() => scrollToSection("tech")} className="text-left py-2">
                 {t.nav.tech}
@@ -234,6 +264,56 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
           </div>
         </section>
 
+        {/* Nova seção de serviços para melhorar SEO */}
+        <section id="services" className="py-6 md:py-8">
+          <div className="container px-4 md:px-6">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6 text-center">
+              {t.services.title}
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.webDevelopment.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.webDevelopment.description}</p>
+                <TagList tags={serviceTags.webDevelopment} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.ecommerce.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.ecommerce.description}</p>
+                <TagList tags={serviceTags.ecommerce} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.mobileDevelopment.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.mobileDevelopment.description}</p>
+                <TagList tags={serviceTags.mobileDevelopment} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.backend.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.backend.description}</p>
+                <TagList tags={serviceTags.backend} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.seo.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.seo.description}</p>
+                <TagList tags={serviceTags.seo} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">{t.services.marketing.title}</h3>
+                <p className="text-gray-300 mb-4">{t.services.marketing.description}</p>
+                <TagList tags={serviceTags.marketing} />
+              </div>
+              <div className="bg-[#252525] p-6 rounded-lg border border-gray-800">
+                <h3 className="text-xl font-semibold mb-3">Freelance</h3>
+                <p className="text-gray-300 mb-4">
+                  {lang === "pt"
+                    ? "Serviços de desenvolvimento freelance para clientes no Brasil e no mundo todo. Atendimento presencial em Campinas e região, e trabalho remoto para qualquer lugar do planeta."
+                    : "Freelance development services for clients in Brazil and worldwide. In-person service in Campinas region, and remote work for anywhere in the world."}
+                </p>
+                <TagList tags={serviceTags.freelance} />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="tech" className="py-6 md:py-8">
           <div className="container px-4 md:px-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6 text-center">
@@ -248,135 +328,6 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
                 marketing: t.tech.categories.marketing,
               }}
             />
-          </div>
-        </section>
-
-        {/* Nova seção de serviços para melhorar SEO */}
-        <section id="services" className="py-6 md:py-8 bg-[#252525]">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-6 text-center">
-              {t.services.title}
-            </h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">{t.services.webDevelopment.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.webDevelopment.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    HTML5
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    CSS3
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    JavaScript
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    React.js
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Next.js
-                  </span>
-                </div>
-              </div>
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">{t.services.mobileDevelopment.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.mobileDevelopment.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    React Native
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Expo
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    NativeWind
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    iOS
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Android
-                  </span>
-                </div>
-              </div>
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">{t.services.webApps.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.webApps.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    PWA
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Service Workers
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Offline First
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Responsive
-                  </span>
-                </div>
-              </div>
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">{t.services.ecommerce.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.ecommerce.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Stripe
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    PostgreSQL
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Admin Panel
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Inventory
-                  </span>
-                </div>
-              </div>
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">{t.services.seo.title}</h3>
-                <p className="text-gray-300 mb-4">{t.services.seo.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Google Analytics
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Schema.org
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Local SEO
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Performance
-                  </span>
-                </div>
-              </div>
-              <div className="bg-[#1d1d1d] p-6 rounded-lg border border-gray-800">
-                <h3 className="text-xl font-semibold mb-3">Freelance</h3>
-                <p className="text-gray-300 mb-4">
-                  {lang === "pt"
-                    ? "Serviços de desenvolvimento freelance para empresas e startups em Campinas e região. Projetos sob medida para suas necessidades."
-                    : "Freelance development services for companies and startups in Campinas and region. Custom projects for your needs."}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Campinas
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    São Paulo
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Remote
-                  </span>
-                  <span className="inline-flex items-center rounded-md bg-gray-800 px-2 py-1 text-xs font-medium text-gray-300 ring-1 ring-inset ring-gray-700">
-                    Freelance
-                  </span>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
