@@ -78,7 +78,7 @@ export default function RootLayout({
   return (
     <html lang={params.lang} className="dark">
       <head>
-        {/* Preload critical resources - corrigido para fetchPriority com P maiúsculo */}
+        {/* Preload critical resources */}
         <link rel="preload" href="/images/delivery.jpeg" as="image" fetchPriority="high" />
         <link rel="preconnect" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" />

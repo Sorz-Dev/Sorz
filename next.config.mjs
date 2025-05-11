@@ -19,12 +19,7 @@ const nextConfig = {
       },
     ],
   },
-  // Otimizações para melhorar a performance
-  swcMinify: true,
-  compiler: {
-    // Remover console.logs em produção
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
+  // Removido swcMinify que não é mais reconhecido no Next.js 15
   // Otimizações para reduzir o JavaScript
   experimental: {
     optimizeCss: true,
