@@ -33,6 +33,7 @@ This project demonstrates our ability to develop complete and scalable solutions
 ## 💻 Technology Stack
 
 ### Frontend
+
 - **React.js**: Main library for building interfaces
 - **Next.js**: React framework for hybrid rendering and SEO optimization
 - **TypeScript**: Typed superset of JavaScript for safer development
@@ -41,6 +42,7 @@ This project demonstrates our ability to develop complete and scalable solutions
 - **Lucide Icons**: Minimalist SVG icon set
 
 ### Backend
+
 - **Node.js**: Server-side JavaScript runtime environment
 - **Nest.js**: Node.js framework for scalable APIs
 - **Bun**: Fast JavaScript runtime for development
@@ -49,12 +51,14 @@ This project demonstrates our ability to develop complete and scalable solutions
 - **Stripe**: Online payment processing
 
 ### DevOps & Infrastructure
+
 - **Vercel**: Platform for hosting and continuous deployment
 - **Neon**: Serverless PostgreSQL database
 - **Blob Storage**: File and image storage
 - **Git/GitHub**: Version control and collaboration
 
 ### Tools & Optimization
+
 - **Formspree**: Backend-less form processing
 - **Google Analytics**: Traffic and behavior analysis
 - **Technical SEO**: Search engine optimization
@@ -75,7 +79,3 @@ This project demonstrates our ability to develop complete and scalable solutions
 - **Cookie Consent**: Complete consent management system
 - **HTTPS**: Enforced on all pages
 - **Input Sanitization**: Form data validation
-
----
-
-*For the Portuguese version of this README, see the [README.md](README.md) file.*

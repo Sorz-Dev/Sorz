@@ -75,7 +75,3 @@ Este projeto demonstra nossa capacidade de desenvolver soluções completas e es
 - **Consentimento de Cookies**: Sistema completo de gerenciamento de consentimento
 - **HTTPS**: Forçado em todas as páginas
 - **Sanitização de Entrada**: Validação de dados de formulário
-
----
-
-*Para a versão em inglês deste README, consulte o arquivo [README-EN.md](README-EN.md).*
