@@ -28,6 +28,7 @@ export const messages = {
         title: "Ecossistema Delivery WebApp",
         description: "Sistema com login, painel administrativo, pedidos, miniaturas em WebP e fluxo real de entrega.",
         tags: [
+          "React.js",
           "Next.js",
           "TypeScript",
           "Tailwind",
@@ -44,13 +45,13 @@ export const messages = {
         title: "JL Mudanças & Fretes",
         description:
           "Site institucional para empresa de mudanças em Campinas, com foco em SEO local, otimização de performance, e botão direto para atendimento no WhatsApp.",
-        tags: ["HTML", "CSS", "SEO", "Vercel"],
+        tags: ["HTML", "CSS", "JavaScript", "SEO", "Vercel"],
       },
       {
         title: "Cardápio Digital",
         description:
           "Solução moderna para apresentação de itens com imagens e descrições, com suporte a múltiplos idiomas e tema claro/escuro.",
-        tags: ["Next.js", "TypeScript", "Tailwind", "SEO", "Localização", "Tema Claro/Escuro", "Vercel"],
+        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "SEO", "Localização", "Tema Claro/Escuro", "Vercel"],
       },
     ],
   },

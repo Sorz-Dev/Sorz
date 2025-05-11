@@ -4,37 +4,67 @@
   <img src="public/images/logo.webp" alt="Sorz Logo" width="300" />
 </p>
 
-## 📋 Sobre o Projeto
+## 📋 Sobre a Empresa
 
-Sorz é um site de portfólio moderno para serviços de desenvolvimento digital, construído com Next.js e TailwindCSS. O site apresenta projetos, tecnologias utilizadas, e oferece um formulário de contato para potenciais clientes.
+A Sorz é uma empresa de desenvolvimento digital especializada na criação de soluções web modernas e eficientes. Localizada em Campinas, São Paulo, oferecemos serviços de desenvolvimento de sites, aplicações web (PWA) e aplicativos nativos que resolvem problemas reais de negócios.
 
-### ✨ Características
+Nossa missão é transformar ideias em produtos digitais de alta qualidade, combinando design atraente com código limpo e performático. Trabalhamos com empresas de diversos segmentos, desde pequenos negócios locais até startups em crescimento.
 
-- **Design Responsivo**: Experiência otimizada em dispositivos móveis e desktop
-- **Multilíngue**: Suporte completo para português e inglês
+## 🚀 Projeto Principal: Ecossistema Delivery
+
+Nosso projeto principal é um ecossistema completo para delivery, desenvolvido com tecnologias modernas para oferecer uma experiência fluida tanto para clientes quanto para administradores:
+
+- **Painel Administrativo**: Interface completa para gerenciamento de produtos, pedidos e clientes
+- **Sistema de Pedidos**: Fluxo intuitivo de pedidos com acompanhamento em tempo real
+- **Otimização de Imagens**: Processamento e entrega de imagens em WebP para carregamento rápido
+- **Autenticação Segura**: Sistema robusto de login e gerenciamento de usuários
+- **Pagamentos Integrados**: Processamento de pagamentos com Stripe
+- **Banco de Dados Relacional**: Armazenamento estruturado com PostgreSQL
+
+Este projeto demonstra nossa capacidade de desenvolver soluções completas e escaláveis para necessidades específicas de negócios.
+
+## 💻 Stack Tecnológica
+
+### Frontend
+- **React.js**: Biblioteca principal para construção de interfaces
+- **Next.js**: Framework React para renderização híbrida e otimização de SEO
+- **TypeScript**: Superset tipado de JavaScript para desenvolvimento mais seguro
+- **Tailwind CSS**: Framework CSS utilitário para design responsivo
+- **Headless UI**: Componentes acessíveis e customizáveis
+- **Lucide Icons**: Conjunto de ícones SVG minimalistas
+
+### Backend
+- **Node.js**: Ambiente de execução JavaScript server-side
+- **Nest.js**: Framework Node.js para APIs escaláveis
+- **Bun**: Runtime JavaScript rápido para desenvolvimento
+- **PostgreSQL**: Sistema de banco de dados relacional
+- **Auth0**: Plataforma de autenticação e autorização
+- **Stripe**: Processamento de pagamentos online
+
+### DevOps & Infraestrutura
+- **Vercel**: Plataforma para hospedagem e deploy contínuo
+- **Neon**: Banco de dados PostgreSQL serverless
+- **Blob Storage**: Armazenamento de arquivos e imagens
+- **Git/GitHub**: Controle de versão e colaboração
+
+### Ferramentas & Otimização
+- **Formspree**: Processamento de formulários sem backend
+- **Google Analytics**: Análise de tráfego e comportamento
+- **SEO Técnico**: Otimização para mecanismos de busca
+- **PWA**: Recursos de Progressive Web App
+
+## 🌐 Recursos do Site
+
+- **Design Responsivo**: Experiência otimizada em qualquer dispositivo
+- **Multilíngue**: Suporte completo para português e inglês com detecção automática
 - **Modo Escuro**: Interface adaptada para visualização noturna
-- **SEO Otimizado**: Meta tags, Schema.org, e outras práticas para melhor indexação
-- **Acessibilidade**: Implementação de práticas WCAG para melhor acessibilidade
 - **Conformidade LGPD/GDPR**: Sistema de consentimento de cookies e políticas de privacidade
 - **Integração WhatsApp**: Botão flutuante para contato direto
-
-## 🚀 Tecnologias
-
-- **Frontend**:
-  - [Next.js 15](https://nextjs.org/) - Framework React com renderização híbrida
-  - [TypeScript](https://www.typescriptlang.org/) - Tipagem estática para JavaScript
-  - [TailwindCSS](https://tailwindcss.com/) - Framework CSS utilitário
-  - [Headless UI](https://headlessui.com/) - Componentes acessíveis sem estilo
-  - [Lucide Icons](https://lucide.dev/) - Conjunto de ícones SVG
-
-- **Ferramentas**:
-  - [Formspree](https://formspree.io/) - Processamento de formulários sem backend
-  - [Vercel](https://vercel.com/) - Plataforma de hospedagem e CI/CD
+- **SEO Otimizado**: Implementação de Schema.org, meta tags e outras práticas recomendadas
 
 ## 🛠️ Instalação e Uso
 
 ### Pré-requisitos
-
 - Node.js 18.17.0 ou superior
 - pnpm (recomendado) ou npm
 
@@ -86,24 +116,12 @@ Sorz/
 └── middleware.ts         # Middleware para redirecionamento de idioma
 \`\`\`
 
-## 🌐 Internacionalização
-
-O site suporta português e inglês, com detecção automática do idioma preferido do usuário. Para adicionar um novo idioma:
-
-1. Crie um novo arquivo em `i18n/locales/[código-idioma].ts`
-2. Adicione o código do idioma ao array `locales` em `i18n/index.ts`
-3. Atualize o middleware para incluir o novo idioma
-
 ## 🔒 Segurança
 
 - **Skew Protection**: Proteção contra desincronização de relógio
 - **Consentimento de Cookies**: Sistema completo de gerenciamento de consentimento
 - **HTTPS**: Forçado em todas as páginas
 - **Sanitização de Entrada**: Validação de dados de formulário
-
-## 📱 PWA
-
-O site é otimizado como Progressive Web App (PWA), permitindo instalação em dispositivos móveis e funcionamento offline limitado.
 
 ## 📄 Licença
 

@@ -28,6 +28,7 @@ export const messages = {
         title: "Delivery WebApp Ecosystem",
         description: "System with login, admin panel, orders, WebP thumbnails and real delivery flow.",
         tags: [
+          "React.js",
           "Next.js",
           "TypeScript",
           "Tailwind",
@@ -44,13 +45,13 @@ export const messages = {
         title: "JL Moving & Freight",
         description:
           "Institutional website for a moving company in Campinas, focusing on local SEO, performance optimization, and direct WhatsApp contact button.",
-        tags: ["HTML", "CSS", "SEO", "Vercel"],
+        tags: ["HTML", "CSS", "JavaScript", "SEO", "Vercel"],
       },
       {
         title: "Digital Menu",
         description:
           "Modern solution for presenting items with images and descriptions, with support for multiple languages and light/dark theme.",
-        tags: ["Next.js", "TypeScript", "Tailwind", "SEO", "Localization", "Light/Dark Theme", "Vercel"],
+        tags: ["React.js", "Next.js", "TypeScript", "Tailwind", "SEO", "Localization", "Light/Dark Theme", "Vercel"],
       },
     ],
   },
