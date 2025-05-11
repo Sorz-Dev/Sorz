@@ -78,12 +78,6 @@ O repositório está público apenas para permitir a visualização do código c
 
 ---
 
-<p align="center">
-  Desenvolvido com ❤️ por <a href="https://github.com/Sorz-Dev">Sorz</a>
-</p>
-
----
-
 # Sorz - Digital Development
 
 <p align="center">
@@ -161,9 +155,3 @@ This project demonstrates our ability to develop complete and scalable solutions
 
 This code is not licensed for use, modification, or distribution. All rights reserved.
 The repository is public only to allow viewing of the code as part of a professional portfolio.
-
----
-
-<p align="center">
-  Developed with ❤️ by <a href="https://github.com/Sorz-Dev">Sorz</a>
-</p>
