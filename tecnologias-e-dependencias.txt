@@ -1,0 +1,104 @@
+# TECNOLOGIAS E DEPENDÊNCIAS - SITE SORZ
+
+## LINGUAGENS DE PROGRAMAÇÃO
+
+### Core
+- TypeScript: Linguagem principal, superset tipado de JavaScript
+- JavaScript: Utilizado em scripts e interações cliente-side
+
+### Marcação e Estilo
+- HTML5: Estruturação do conteúdo
+- CSS3: Estilização e responsividade
+- MDX: Para conteúdo dinâmico com componentes React
+
+## FRAMEWORKS E BIBLIOTECAS PRINCIPAIS
+
+### Framework de Desenvolvimento
+- Next.js: Framework React com renderização híbrida (Server e Client Components)
+- React: Biblioteca para construção de interfaces
+
+### Estilização
+- Tailwind CSS: Framework CSS utilitário
+- Tailwind CSS Animate: Plugin para animações
+- Headless UI: Componentes não estilizados para acessibilidade
+
+### Roteamento e Navegação
+- Next.js App Router: Sistema de roteamento baseado em arquivos
+
+## BIBLIOTECAS DE COMPONENTES E UTILIDADES
+
+### Componentes UI
+- shadcn/ui: Sistema de componentes baseados em Radix UI
+- Lucide React: Biblioteca de ícones SVG
+
+### Formulários
+- @formspree/react: Integração com serviço Formspree para formulários
+
+### Data e Formatação
+- date-fns: Biblioteca para manipulação de datas
+- date-fns/locale: Suporte para localização de datas (pt-BR, en-US)
+
+### Internacionalização
+- @formatjs/intl-localematcher: Utilitário para detecção e correspondência de locais
+
+## PACOTES ESSENCIAIS
+
+### Tipografia
+- next/font/google: Carregamento otimizado de fontes Google
+
+### Imagens e Mídia
+- next/image: Componente otimizado para imagens
+- Vercel Blob Storage: Armazenamento de ativos e imagens
+
+### Animações
+- Headless UI Transition: Componente para animações de transição
+- IntersectionObserver API: Para animações baseadas em visibilidade
+
+## DEPENDÊNCIAS DE DESENVOLVIMENTO
+
+### Ferramentas de Desenvolvimento
+- ESLint: Linting de código
+- TypeScript: Verificação de tipos
+
+### Ferramentas de Análise
+- next/bundle-analyzer: Análise do bundle gerado
+
+## DEPENDÊNCIAS DE RUNTIME
+
+### Node.js
+- Versão: >=18.17.0 (conforme especificado no engines)
+
+### Browser Support
+- Production: >0.2%, not dead, not op_mini all
+- Development: last 1 chrome version, last 1 firefox version, last 1 safari version
+
+## SERVIÇOS EXTERNOS
+
+### Hospedagem e Infraestrutura
+- Vercel: Plataforma de hospedagem e deploy
+- Vercel Edge Functions: Para o middleware de detecção de idioma
+
+### Armazenamento
+- Vercel Blob Storage: Para armazenamento de imagens e ativos estáticos
+
+### Formulário
+- Formspree: Serviço para processamento de formulários de contato
+
+### Tracking (opcional)
+- Google Analytics: Análise de tráfego e comportamento do usuário
+
+## ESTRUTURA DE PASTAS PRINCIPAIS
+
+### Organização de Código
+- /app: Componentes e páginas do aplicativo (Next.js App Router)
+- /app/[lang]: Suporte a múltiplos idiomas
+- /components: Componentes reutilizáveis
+- /i18n: Configuração e mensagens de internacionalização
+- /public: Arquivos estáticos
+- /lib: Utilitários e funções compartilhadas
+- /hooks: Hooks personalizados do React
+
+### Configuração
+- next.config.mjs: Configuração do Next.js
+- tailwind.config.ts: Configuração do Tailwind CSS
+- middleware.ts: Middleware para detecção de idioma

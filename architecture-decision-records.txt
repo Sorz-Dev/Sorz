@@ -1,0 +1,560 @@
+# ARCHITECTURE DECISION RECORDS (ADR) - PROJETO SORZ
+
+## ADR 1: Adoção do Next.js App Router como Framework Principal
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de um framework moderno para desenvolvimento web que oferecesse renderização híbrida, otimização de SEO, e suporte a TypeScript. As opções consideradas foram Next.js (Pages Router e App Router), Remix, Gatsby e SvelteKit.
+
+### Decisão:
+Adotar o Next.js com App Router como framework principal do projeto.
+
+### Justificativa:
+- O App Router oferece Server Components, melhorando a performance inicial e reduzindo o JavaScript enviado ao cliente
+- Suporte nativo a TypeScript
+- Sistema de roteamento baseado em arquivos que facilita a organização do código
+- Renderização híbrida (SSR, SSG, ISR) em um único framework
+- Otimizações automáticas de imagens e fontes
+- Ecossistema maduro e amplo suporte da comunidade
+- Integração perfeita com a Vercel para hospedagem
+
+### Consequências:
+- Positivas:
+  - Melhor performance de carregamento inicial
+  - Melhor SEO devido à renderização no servidor
+  - Desenvolvimento mais rápido com convenções bem definidas
+  - Facilidade de implementação de rotas dinâmicas para internacionalização
+
+- Negativas:
+  - Curva de aprendizado para novos desenvolvedores não familiarizados com o App Router
+  - Algumas limitações em comparação com o Pages Router mais maduro
+  - Dependência do ecossistema React
+
+### Alternativas Consideradas:
+- Next.js Pages Router: Mais maduro, mas com menos recursos modernos
+- Remix: Excelente para UX, mas ecossistema menor
+- Gatsby: Ótimo para sites estáticos, mas menos flexível para conteúdo dinâmico
+- SvelteKit: Performance excelente, mas menor adoção no mercado
+
+---
+
+## ADR 2: Tailwind CSS como Sistema de Estilização
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de um sistema de estilização que permitisse desenvolvimento rápido, consistência visual e boa performance. As opções consideradas foram CSS Modules, Styled Components, Emotion, Sass e Tailwind CSS.
+
+### Decisão:
+Adotar o Tailwind CSS como sistema principal de estilização, complementado por shadcn/ui para componentes.
+
+### Justificativa:
+- Desenvolvimento mais rápido com classes utilitárias
+- Redução do tamanho final do CSS através de purge de classes não utilizadas
+- Facilidade de manter consistência visual com o design system
+- Excelente suporte para responsividade com classes condicionais
+- Integração perfeita com o Next.js
+- Possibilidade de estender o tema conforme necessário
+
+### Consequências:
+- Positivas:
+  - Desenvolvimento mais rápido e iterativo
+  - Arquivos CSS finais menores após otimização
+  - Facilidade de manter consistência em todo o projeto
+  - Menor necessidade de alternar entre arquivos HTML/JSX e CSS
+
+- Negativas:
+  - Classes longas em elementos com muitos estilos
+  - Curva de aprendizado inicial para desenvolvedores acostumados com CSS tradicional
+  - Arquivos HTML/JSX potencialmente mais verbosos
+
+### Alternativas Consideradas:
+- CSS Modules: Boa encapsulação, mas desenvolvimento mais lento
+- Styled Components: Boa DX, mas impacto na performance de renderização
+- Emotion: Similar ao Styled Components com algumas otimizações
+- Sass: Poderoso, mas requer mais estruturação manual
+
+---
+
+## ADR 3: Estratégia de Internacionalização Personalizada
+
+### Status: Aceito
+
+### Contexto:
+O site precisava suportar múltiplos idiomas (português e inglês) com detecção automática do idioma do usuário e possibilidade de alternar manualmente. As opções consideradas foram next-intl, react-i18next, LinguiJS e uma solução personalizada.
+
+### Decisão:
+Implementar uma solução de internacionalização personalizada usando o middleware do Next.js e arquivos de mensagens estruturados.
+
+### Justificativa:
+- Controle total sobre a lógica de detecção e seleção de idioma
+- Integração perfeita com o sistema de rotas do Next.js App Router
+- Menor overhead de bibliotecas externas
+- Flexibilidade para adaptar a solução às necessidades específicas do projeto
+- Uso de parâmetros de rota dinâmicos ([lang]) para melhor SEO
+
+### Consequências:
+- Positivas:
+  - URLs amigáveis para SEO (/pt/... e /en/...)
+  - Detecção automática do idioma preferido do usuário
+  - Controle total sobre a lógica de fallback
+  - Menor tamanho de bundle
+
+- Negativas:
+  - Necessidade de implementar manualmente recursos que bibliotecas oferecem prontos
+  - Maior responsabilidade de manutenção
+  - Potencial para bugs em lógicas complexas de internacionalização
+
+### Alternativas Consideradas:
+- next-intl: Boa integração com Next.js, mas overhead desnecessário para apenas dois idiomas
+- react-i18next: Solução robusta, mas com mais recursos do que o necessário
+- LinguiJS: Bom suporte a pluralização e formatação, mas complexidade adicional
+
+---
+
+## ADR 4: Abordagem de Componentes com shadcn/ui
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de componentes UI consistentes, acessíveis e personalizáveis. As opções consideradas foram Material UI, Chakra UI, Ant Design, desenvolvimento totalmente personalizado e shadcn/ui.
+
+### Decisão:
+Adotar shadcn/ui como base para componentes UI, complementado por componentes personalizados quando necessário.
+
+### Justificativa:
+- Componentes não empacotados que podem ser adicionados diretamente ao projeto
+- Baseado em Radix UI, garantindo acessibilidade
+- Estilização com Tailwind CSS, mantendo consistência com o resto do projeto
+- Altamente personalizável e sem opinião sobre estilo visual
+- Sem overhead de biblioteca completa
+- Componentes podem ser modificados livremente sem dependências externas
+
+### Consequências:
+- Positivas:
+  - Controle total sobre o código dos componentes
+  - Melhor performance por não carregar uma biblioteca inteira
+  - Facilidade de personalização visual
+  - Componentes acessíveis por padrão
+
+- Negativas:
+  - Menos componentes disponíveis em comparação com bibliotecas completas
+  - Responsabilidade de manter os componentes atualizados
+  - Necessidade de desenvolver componentes adicionais não fornecidos
+
+### Alternativas Consideradas:
+- Material UI: Rico em recursos, mas com estilo visual opinativo e overhead significativo
+- Chakra UI: Boa acessibilidade, mas menos integração com Tailwind
+- Ant Design: Ampla gama de componentes, mas estilo visual muito específico
+- Desenvolvimento totalmente personalizado: Máximo controle, mas tempo de desenvolvimento muito maior
+
+---
+
+## ADR 5: Estratégia de Formulário com Formspree
+
+### Status: Aceito
+
+### Contexto:
+O site necessitava de um formulário de contato funcional sem a necessidade de implementar um backend completo. As opções consideradas foram implementação de API Route no Next.js, uso de serverless functions, e serviços de terceiros como Formspree, Netlify Forms e GetForm.
+
+### Decisão:
+Utilizar o serviço Formspree com seu SDK React para processamento de formulários.
+
+### Justificativa:
+- Solução serverless que não requer backend próprio
+- SDK React oficial que facilita a integração
+- Validação de formulários integrada
+- Proteção contra spam
+- Notificações por email configuráveis
+- Armazenamento e exportação de submissões
+
+### Consequências:
+- Positivas:
+  - Implementação rápida e confiável
+  - Sem necessidade de manutenção de backend
+  - Funcionalidades avançadas como validação e proteção contra spam
+  - Experiência de usuário melhorada com feedback de erros e sucesso
+
+- Negativas:
+  - Dependência de serviço de terceiros
+  - Limitações no plano gratuito
+  - Menos controle sobre o processamento dos dados
+
+### Alternativas Consideradas:
+- API Routes do Next.js: Mais controle, mas requer implementação de envio de email e armazenamento
+- Netlify Forms: Boa integração com Netlify, mas o site é hospedado na Vercel
+- GetForm: Similar ao Formspree, mas com menos recursos no plano gratuito
+- AWS Lambda: Poderoso, mas complexidade desnecessária para este caso de uso
+
+---
+
+## ADR 6: Estratégia de Renderização Híbrida
+
+### Status: Aceito
+
+### Contexto:
+O projeto precisava equilibrar boa performance inicial, SEO e experiência de usuário interativa. As opções de renderização incluíam Client-Side Rendering (CSR), Server-Side Rendering (SSR), Static Site Generation (SSG) e abordagens híbridas.
+
+### Decisão:
+Adotar uma estratégia de renderização híbrida utilizando Server Components do Next.js para conteúdo estático e Client Components para partes interativas.
+
+### Justificativa:
+- Server Components reduzem o JavaScript enviado ao cliente
+- Melhor SEO com conteúdo renderizado no servidor
+- Melhor performance de carregamento inicial
+- Client Components apenas onde necessário para interatividade
+- Possibilidade de streaming de UI para melhorar a percepção de performance
+
+### Consequências:
+- Positivas:
+  - Melhor performance percebida pelo usuário
+  - Melhor indexação por motores de busca
+  - Redução no tamanho total de JavaScript
+  - Experiência de usuário mais fluida
+
+- Negativas:
+  - Complexidade adicional na decisão entre Server e Client Components
+  - Necessidade de entender bem o modelo mental do React Server Components
+  - Algumas limitações em Server Components (como uso de hooks)
+
+### Alternativas Consideradas:
+- CSR puro: Mais simples, mas pior SEO e performance inicial
+- SSG completo: Excelente performance, mas menos flexibilidade para conteúdo dinâmico
+- SSR tradicional: Bom equilíbrio, mas sem os benefícios dos Server Components
+
+---
+
+## ADR 7: Hospedagem na Vercel
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de uma plataforma de hospedagem que oferecesse boa performance, facilidade de deploy e boa integração com Next.js. As opções consideradas foram Vercel, Netlify, AWS Amplify, e hospedagem tradicional com VPS.
+
+### Decisão:
+Hospedar o site na plataforma Vercel.
+
+### Justificativa:
+- Integração perfeita com Next.js (mesma empresa)
+- Edge Functions para o middleware de internacionalização
+- CDN global para melhor performance
+- Previews automáticos para cada pull request
+- Analytics integrado
+- Certificados SSL automáticos
+- Facilidade de configuração de domínios personalizados
+
+### Consequências:
+- Positivas:
+  - Processo de deploy simplificado e automatizado
+  - Excelente performance global através da CDN
+  - Facilidade de rollback para versões anteriores
+  - Monitoramento de performance integrado
+
+- Negativas:
+  - Dependência de um único provedor
+  - Potenciais limitações nos planos gratuitos para projetos em crescimento
+  - Menos controle sobre a infraestrutura em comparação com soluções self-hosted
+
+### Alternativas Consideradas:
+- Netlify: Similar à Vercel, mas com menos otimizações específicas para Next.js
+- AWS Amplify: Poderoso, mas com curva de aprendizado maior
+- VPS tradicional: Máximo controle, mas maior complexidade de configuração e manutenção
+
+---
+
+## ADR 8: Estratégia de Gerenciamento de Estado
+
+### Status: Aceito
+
+### Contexto:
+O projeto precisava de uma abordagem para gerenciamento de estado de UI, como alternância de idiomas, consentimento de cookies e estados de formulários. As opções consideradas foram Redux, Zustand, Jotai, Recoil e React Context API.
+
+### Decisão:
+Utilizar React Hooks (useState, useEffect) e React Context API para gerenciamento de estado, sem bibliotecas externas de gerenciamento de estado.
+
+### Justificativa:
+- Complexidade de estado relativamente baixa não justifica bibliotecas adicionais
+- React Context API suficiente para estados globais limitados (tema, idioma)
+- Hooks de React cobrem bem os casos de uso de componentes individuais
+- Redução de dependências externas
+- Abordagem mais simples e direta
+
+### Consequências:
+- Positivas:
+  - Código mais simples e direto
+  - Menor tamanho de bundle
+  - Sem necessidade de aprender APIs adicionais
+  - Facilidade de manutenção para desenvolvedores familiarizados com React
+
+- Negativas:
+  - Potencial para prop drilling em componentes profundamente aninhados
+  - Menos ferramentas de debugging especializadas
+  - Possível necessidade de refatoração se a complexidade do estado aumentar significativamente
+
+### Alternativas Consideradas:
+- Redux: Poderoso, mas overhead desnecessário para este projeto
+- Zustand: Mais leve que Redux, mas ainda uma dependência adicional
+- Jotai/Recoil: Boas para estado atômico, mas complexidade adicional não justificada
+- MobX: Bom para estado observável, mas desnecessário para este caso
+
+---
+
+## ADR 9: Estratégia de Animações e Transições
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de animações e transições para melhorar a experiência do usuário sem comprometer a performance. As opções consideradas foram CSS puro, Framer Motion, React Spring, GSAP e Headless UI Transition.
+
+### Decisão:
+Utilizar uma combinação de animações CSS nativas, Tailwind CSS Animate e Headless UI Transition para componentes específicos.
+
+### Justificativa:
+- Animações CSS são performáticas e bem suportadas
+- Tailwind CSS Animate fornece utilitários de animação consistentes com o sistema de design
+- Headless UI Transition oferece componentes React para transições mais complexas
+- Abordagem minimalista que prioriza performance
+- IntersectionObserver para animações baseadas em scroll
+
+### Consequências:
+- Positivas:
+  - Melhor performance por utilizar principalmente CSS nativo
+  - Menor tamanho de bundle
+  - Animações que respeitam as preferências de redução de movimento do usuário
+  - Boa integração com o resto do sistema de design
+
+- Negativas:
+  - Limitações em animações mais complexas
+  - Menos controle programático sobre o estado das animações
+  - Potencial necessidade de soluções personalizadas para casos específicos
+
+### Alternativas Consideradas:
+- Framer Motion: Poderoso, mas adiciona peso significativo ao bundle
+- React Spring: Baseado em física, bom para animações naturais, mas complexidade adicional
+- GSAP: Extremamente poderoso, mas desnecessário para as necessidades do projeto
+- Lottie: Bom para animações complexas, mas overhead significativo
+
+---
+
+## ADR 10: Estratégia de Imagens e Assets
+
+### Status: Aceito
+
+### Contexto:
+O projeto incluía várias imagens e assets que precisavam ser otimizados para performance e experiência do usuário. As opções consideradas foram gerenciamento manual, next/image, bibliotecas de otimização de imagens e CDNs de imagem.
+
+### Decisão:
+Utilizar o componente next/image do Next.js em conjunto com Vercel Blob Storage para armazenamento e otimização de imagens.
+
+### Justificativa:
+- next/image oferece otimização automática de imagens (formato, tamanho, lazy loading)
+- Vercel Blob Storage fornece CDN global para assets
+- Suporte a formatos modernos como WebP e AVIF
+- Carregamento priorizado para imagens acima da dobra
+- Prevenção de Cumulative Layout Shift (CLS)
+
+### Consequências:
+- Positivas:
+  - Melhor performance de carregamento de página
+  - Redução significativa no tamanho de transferência de imagens
+  - Melhor experiência em conexões lentas com carregamento progressivo
+  - Melhor Core Web Vitals (especialmente LCP e CLS)
+
+- Negativas:
+  - Dependência da implementação do Next.js
+  - Necessidade de especificar dimensões para imagens
+  - Potenciais problemas de compatibilidade com alguns navegadores mais antigos
+
+### Alternativas Consideradas:
+- Gerenciamento manual: Mais controle, mas muito trabalho de otimização
+- Cloudinary/Imgix: Poderosos, mas custo adicional e complexidade de integração
+- Bibliotecas como sharp: Boas para processamento, mas requerem implementação manual
+- Imagens estáticas em /public: Simples, mas sem otimização automática
+
+---
+
+## ADR 11: Estratégia de Consentimento de Cookies
+
+### Status: Aceito
+
+### Contexto:
+O site precisava implementar um sistema de consentimento de cookies para conformidade com regulamentações como GDPR e LGPD. As opções consideradas foram bibliotecas de terceiros, soluções gerenciadas e implementação personalizada.
+
+### Decisão:
+Desenvolver um componente personalizado de consentimento de cookies integrado com localStorage.
+
+### Justificativa:
+- Controle total sobre a aparência e comportamento
+- Integração perfeita com o design system do site
+- Funcionalidade relativamente simples não justifica biblioteca externa
+- Armazenamento das preferências em localStorage para persistência
+- Possibilidade de personalização completa das mensagens por idioma
+
+### Consequências:
+- Positivas:
+  - UI consistente com o resto do site
+  - Menor tamanho de bundle
+  - Flexibilidade total para adaptação a requisitos específicos
+  - Facilidade de integração com o sistema de internacionalização
+
+- Negativas:
+  - Responsabilidade de manter conformidade com regulamentações
+  - Necessidade de implementar manualmente recursos que bibliotecas oferecem prontos
+  - Potencial para bugs em lógicas complexas de gerenciamento de cookies
+
+### Alternativas Consideradas:
+- Cookie Consent: Popular, mas adiciona dependência e menos integração visual
+- OneTrust/TrustArc: Soluções empresariais completas, mas custo elevado e complexidade desnecessária
+- Cookiebot: Bom equilíbrio, mas ainda uma dependência externa com limitações no plano gratuito
+
+---
+
+## ADR 12: Estratégia de SEO e Metadata
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de uma estratégia robusta de SEO para melhorar a visibilidade nos motores de busca. As opções consideradas foram metadata estática, geração dinâmica e bibliotecas especializadas.
+
+### Decisão:
+Implementar uma estratégia de metadata dinâmica usando as APIs do Next.js (generateMetadata) e Schema.org para rich snippets.
+
+### Justificativa:
+- Metadata específica por página e por idioma
+- Suporte a Open Graph e Twitter Cards para compartilhamento em redes sociais
+- Implementação de Schema.org para rich snippets em resultados de busca
+- Sitemap.xml e robots.txt dinâmicos
+- Controle granular sobre tags meta por rota
+
+### Consequências:
+- Positivas:
+  - Melhor indexação por motores de busca
+  - Apresentação rica em resultados de busca e compartilhamentos sociais
+  - Metadata sempre sincronizada com o conteúdo atual
+  - Suporte a múltiplos idiomas nos metadados
+
+- Negativas:
+  - Complexidade adicional em comparação com metadata estática
+  - Necessidade de manter a estrutura de dados Schema.org atualizada
+  - Potencial para erros em estruturas de dados complexas
+
+### Alternativas Consideradas:
+- next-seo: Boa biblioteca, mas funcionalidade similar já disponível nativamente
+- Metadata estática: Mais simples, mas menos flexível para conteúdo dinâmico
+- Soluções headless CMS: Boas para conteúdo gerenciável, mas complexidade adicional
+
+---
+
+## ADR 13: Estratégia de Tipografia
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de uma estratégia de tipografia que garantisse boa legibilidade, consistência visual e performance. As opções consideradas foram fontes do sistema, Google Fonts, fontes auto-hospedadas e serviços como Adobe Fonts.
+
+### Decisão:
+Utilizar a fonte Inter do Google Fonts carregada através do módulo next/font/google.
+
+### Justificativa:
+- Inter é uma fonte moderna, legível e versátil
+- next/font/google oferece otimizações automáticas:
+  - Zero layout shift
+  - Precarregamento
+  - Self-hosting automático
+  - Subconjuntos de caracteres
+- Consistência visual em diferentes dispositivos e navegadores
+- Boa performance com display swap para evitar texto invisível
+
+### Consequências:
+- Positivas:
+  - Melhor Core Web Vitals (especialmente CLS)
+  - Carregamento otimizado de fontes
+  - Aparência consistente em todas as plataformas
+  - Boa legibilidade em diferentes tamanhos
+
+- Negativas:
+  - Limitação a fontes disponíveis no Google Fonts
+  - Pequeno overhead inicial para carregar a fonte
+  - Potenciais diferenças sutis de renderização entre navegadores
+
+### Alternativas Consideradas:
+- Fontes do sistema: Máxima performance, mas menos controle visual e consistência
+- Fontes auto-hospedadas manualmente: Mais controle, mas sem as otimizações automáticas
+- Adobe Fonts: Alta qualidade, mas custo adicional e dependência externa
+- Variáveis CSS para fallbacks: Mais complexo de implementar corretamente
+
+---
+
+## ADR 14: Estratégia de Acessibilidade
+
+### Status: Aceito
+
+### Contexto:
+O projeto precisava garantir boa acessibilidade para usuários com diferentes necessidades. As abordagens consideradas foram implementação manual de práticas de acessibilidade, uso de bibliotecas especializadas e componentes acessíveis por padrão.
+
+### Decisão:
+Adotar uma abordagem combinada usando componentes acessíveis por padrão (shadcn/ui baseado em Radix UI) e implementação manual de práticas de acessibilidade.
+
+### Justificativa:
+- Componentes de shadcn/ui já implementam padrões de acessibilidade
+- Uso de elementos semânticos HTML5
+- Implementação de atributos ARIA quando necessário
+- Garantia de contraste adequado para texto
+- Suporte a navegação por teclado
+- Textos alternativos para imagens
+
+### Consequências:
+- Positivas:
+  - Melhor experiência para todos os usuários, incluindo aqueles com necessidades especiais
+  - Conformidade com diretrizes WCAG
+  - Redução de problemas legais relacionados à acessibilidade
+  - Base sólida para futuras melhorias de acessibilidade
+
+- Negativas:
+  - Tempo adicional de desenvolvimento para garantir acessibilidade
+  - Necessidade de conhecimento específico sobre práticas de acessibilidade
+  - Potenciais desafios em componentes personalizados complexos
+
+### Alternativas Consideradas:
+- Implementação puramente manual: Mais controle, mas maior risco de erros
+- Bibliotecas como react-a11y: Úteis para verificação, mas não substituem boas práticas
+- Frameworks de UI totalmente acessíveis: Menos flexibilidade visual
+
+---
+
+## ADR 15: Estratégia de Análise e Monitoramento
+
+### Status: Aceito
+
+### Contexto:
+O projeto necessitava de uma estratégia para análise de tráfego, comportamento do usuário e monitoramento de performance. As opções consideradas foram Google Analytics, Plausible, Fathom, Vercel Analytics e soluções self-hosted.
+
+### Decisão:
+Implementar Google Analytics para análise de tráfego e comportamento, complementado por Vercel Analytics para monitoramento de performance.
+
+### Justificativa:
+- Google Analytics oferece análise detalhada de tráfego e comportamento
+- Vercel Analytics fornece métricas de Core Web Vitals em produção
+- Integração com consentimento de cookies para conformidade com GDPR/LGPD
+- Familiaridade da equipe com as ferramentas
+- Custo zero para o nível de tráfego esperado
+
+### Consequências:
+- Positivas:
+  - Insights detalhados sobre o comportamento do usuário
+  - Monitoramento de performance em produção
+  - Dados para informar decisões de produto
+  - Detecção precoce de problemas de performance
+
+- Negativas:
+  - Preocupações com privacidade relacionadas ao Google Analytics
+  - Impacto potencial na performance devido ao script adicional
+  - Necessidade de gerenciar consentimento de cookies adequadamente
+  - Dependência de serviços de terceiros para dados críticos
+
+### Alternativas Consideradas:
+- Plausible/Fathom: Mais focados em privacidade, mas custo adicional
+- Self-hosted (Matomo): Controle total dos dados, mas complexidade de manutenção
+- Apenas Vercel Analytics: Mais simples, mas menos insights sobre comportamento
+- Nenhuma análise: Máxima performance e privacidade, mas sem insights

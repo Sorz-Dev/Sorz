@@ -1,0 +1,136 @@
+# DOCUMENTAÇÃO DO PROCESSO DE DESENVOLVIMENTO - SITE SORZ
+
+## FASE 1: SETUP INICIAL E ESTRUTURA BASE
+
+### Configuração do Projeto
+- Criação do projeto Next.js com TypeScript
+- Implementação do Tailwind CSS e configuração do tema escuro por padrão
+- Configuração do ESLint e outras ferramentas de desenvolvimento
+- Setup de fontes (Inter via next/font/google)
+
+### Estrutura Base
+- Implementação da estrutura de pastas seguindo o padrão App Router do Next.js
+- Criação da estrutura de internacionalização com suporte a português e inglês
+- Implementação do middleware para detecção automática de idioma baseado no navegador
+- Configuração de componentes UI básicos com shadcn/ui
+
+## FASE 2: DESENVOLVIMENTO DO LAYOUT E COMPONENTES PRINCIPAIS
+
+### Layout e Componentes
+- Desenvolvimento do layout principal com header e footer
+- Criação de componentes de card para projetos
+- Implementação do componente de tech stack
+- Desenvolvimento do formulário de contato
+- Criação do componente de consentimento de cookies
+- Implementação do botão flutuante de WhatsApp
+
+### Estilização
+- Definição da paleta de cores principal (tons escuros com acentos azuis)
+- Implementação de cards com bordas sutis
+- Design de componentes de tag para tecnologias e habilidades
+- Estilização consistente de botões e elementos interativos
+
+## FASE 3: IMPLEMENTAÇÃO DE RECURSOS AVANÇADOS
+
+### Otimizações de Performance
+- Implementação de lazy loading para imagens não essenciais
+- Priorização da imagem LCP (Largest Contentful Paint)
+- Configuração de cabeçalhos de cache para assets estáticos
+- Otimização do carregamento de fontes com font-display: swap
+
+### Animações e Interatividade
+- Adição de animações de entrada baseadas em IntersectionObserver
+- Implementação de efeito de scroll em imagens de preview
+- Criação de transições suaves para mudanças de estado
+- Desenvolvimento da funcionalidade "Ver mais/Ver menos" para listas de tags
+
+### SEO e Metadata
+- Implementação de metadata dinâmica baseada no idioma
+- Configuração de tags Open Graph para compartilhamento em redes sociais
+- Implementação de Schema.org para rich snippets
+- Configuração de sitemap.xml e robots.txt
+
+## FASE 4: INTERNACIONALIZAÇÃO E ACESSIBILIDADE
+
+### Sistema de Internacionalização
+- Implementação de arquivos de mensagens para português e inglês
+- Criação de rotas dinâmicas baseadas no idioma (/pt e /en)
+- Implementação do componente de alternância de idiomas
+- Estruturação de conteúdo traduzível (textos, botões, placeholders)
+
+### Acessibilidade
+- Uso de elementos semânticos HTML5
+- Implementação de atributos aria quando necessário
+- Garantia de contraste adequado para texto
+- Adição de texto alternativo para imagens
+- Suporte a navegação por teclado
+
+## FASE 5: ITERAÇÕES E MELHORIAS
+
+### Primeira Iteração: Melhorias de SEO
+- Ênfase em PageSpeed Insights, Google Business Profile, e Search Console
+- Adição de seção de Digital Marketing
+- Destaque para design responsivo com Tailwind CSS e NativeWind
+- Menção ao Headless UI
+
+### Segunda Iteração: Refinamento do Conteúdo E-commerce
+- Ênfase nas soluções PWA para e-commerce
+- Destaque para pacotes completos de desenvolvimento, PWA, SEO e marketing
+- Unificação do desenvolvimento web com PWA
+- Clarificação sobre apps nativos
+
+### Terceira Iteração: Melhorias na UI
+- Implementação da funcionalidade "Read More" para cards com muitas tags
+- Tags inicialmente truncadas para duas linhas com opção de expansão
+- Exceção para a seção de tecnologias
+
+### Quarta Iteração: Correções de Idioma
+- Correção da lógica de detecção de idioma no middleware
+- Configuração para usar inglês como padrão quando o idioma não for português
+
+### Quinta Iteração: Efeitos Visuais e Correções
+- Aplicação de efeito glassmorphism aos botões "Ver mais" e "Ver menos"
+- Correções de layout na versão em inglês
+- Implementação de solução robusta para problemas de hidratação e carregamento de estilos
+- Adição de script para aplicação imediata de estilos
+- Mecanismo de recálculo de estilos
+
+### Sexta Iteração: Refinamento Visual
+- Substituição das bordas azuis por bordas cinza escuro (zinc-900)
+- Correção do layout do botão WhatsApp em inglês
+- Atualização dos botões "Ver mais"/"Ver menos" para usar zinc-900/60 com bordas zinc-800
+
+### Sétima Iteração: Inversão de Cores e Ajustes
+- Inversão das cores: tags normais com efeito glassmorphism e fundo escuro
+- Botões "Ver mais"/"Ver menos" com fundo slate e efeito glassmorphism
+- Escurecimento dos botões "Ver mais"
+
+### Oitava Iteração: Refinamento de Cores
+- Mudança dos botões "Ver mais" para cor indigo
+- Criação de componente Tag para unificar todos os tags do site
+- Implementação de modos padrão e botão para o componente Tag
+
+### Nona Iteração: Ajustes Finais
+- Alteração da cor de fundo do botão WhatsApp para teal
+- Correção de alinhamento de ícones em botões na versão em inglês
+- Garantia de exibição inline de botões e links
+
+## FASE 6: TESTES E LANÇAMENTO
+
+### Testes
+- Verificação de compatibilidade cross-browser
+- Testes em diferentes dispositivos e tamanhos de tela
+- Validação da funcionalidade de alternância de idiomas
+- Verificação de acessibilidade e conformidade WCAG
+
+### Otimizações Finais
+- Compressão de imagens e assets
+- Remoção de código não utilizado
+- Verificação final de performance via Lighthouse
+- Configuração de análise de métricas de Web Vitals
+
+### Lançamento
+- Deploy na plataforma Vercel
+- Configuração de domínio personalizado
+- Configuração do Google Search Console
+- Integração com Google Analytics

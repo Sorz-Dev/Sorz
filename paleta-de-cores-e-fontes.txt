@@ -1,0 +1,120 @@
+# DOCUMENTAÇÃO DE DESIGN: PALETA DE CORES E FONTES - SITE SORZ
+
+## PALETA DE CORES
+
+### Cores Principais
+- Preto/Fundo Principal: #1d1d1d (background principal)
+- Cinza Escuro/Cards: #252525 (background de cards e elementos)
+- Azul Primário: hsl(210, 100%, 60%) (destaque e ação principal)
+- Branco/Texto: hsl(0, 0%, 98%) (texto principal)
+
+### Cores Secundárias
+- Zinc-900: rgb(24, 24, 27) (bordas)
+- Zinc-800: rgb(39, 39, 42) (bordas de elementos)
+- Zinc-700: rgb(63, 63, 70) (bordas mais claras)
+- Indigo-900: rgb(49, 46, 129) (fundo de botões "Ver mais/menos")
+- Indigo-800: rgb(55, 48, 163) (hover de botões "Ver mais/menos")
+- Indigo-700: rgb(67, 56, 202) (bordas de botões "Ver mais/menos")
+- Teal-600: rgb(13, 148, 136) (botão de WhatsApp)
+- Teal-700: rgb(15, 118, 110) (hover de botão de WhatsApp)
+
+### Cores de Estado e Feedback
+- Verde Sucesso: rgb(22, 163, 74) (mensagens de sucesso)
+- Âmbar Aviso: rgb(180, 83, 9) (avisos)
+- Vermelho Erro: rgb(220, 38, 38) (mensagens de erro)
+
+### Variações de Cinza para Texto
+- Texto Mutado: hsl(0, 0%, 63.9%) (texto secundário)
+- Texto Cinza-300: rgb(209, 213, 219) (texto terciário)
+- Texto Cinza-400: rgb(156, 163, 175) (texto de menor importância)
+
+### Transparências e Efeitos
+- Backdrop/Glassmorphism: bg-opacity-60 backdrop-blur-sm
+- Hover Transparência: bg-opacity-70
+- Zinc-900/60: rgb(24, 24, 27) com 60% de opacidade (fundo de tags)
+- Indigo-900/70: rgb(49, 46, 129) com 70% de opacidade (fundo de botões "Ver mais/menos")
+
+### Cores de Elementos Específicos
+- Laranja Logo (Z): #FFA600
+- Vermelho Logo (S): #FF4000
+- Branco Logo: #FFFFFF
+- Bordas de Alertas: rgba(180, 83, 9, 0.3) (avisos)
+
+## TIPOGRAFIA
+
+### Fonte Principal
+- Família: Inter (sans-serif)
+- Variantes: 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
+- Subconjunto: Latin
+
+### Tamanhos de Fonte
+- xs: 0.75rem (12px)
+- sm: 0.875rem (14px)
+- base: 1rem (16px)
+- lg: 1.125rem (18px)
+- xl: 1.25rem (20px)
+- 2xl: 1.5rem (24px)
+- 3xl: 1.875rem (30px)
+- 4xl: 2.25rem (36px)
+- 5xl: 3rem (48px)
+- 6xl: 3.75rem (60px)
+
+### Espaçamento de Texto
+- tracking-tighter: -0.05em (títulos grandes)
+- tracking-tight: -0.025em (subtítulos)
+- tracking-normal: 0 (texto regular)
+- leading-none: 1 (alturas de linha específicas)
+- leading-tight: 1.25
+- leading-snug: 1.375
+- leading-normal: 1.5
+- leading-relaxed: 1.625
+- leading-loose: 2
+
+## COMPORTAMENTO RESPONSIVO DA TIPOGRAFIA
+
+### Mobile (< 640px)
+- Títulos: 1.875rem (3xl)
+- Subtítulos: 1.25rem (xl)
+- Texto: 1rem (base)
+- Texto pequeno: 0.875rem (sm)
+
+### Tablet (640px - 1024px)
+- Títulos: 2.25rem (4xl)
+- Subtítulos: 1.5rem (2xl)
+- Texto: 1rem (base)
+- Texto pequeno: 0.875rem (sm)
+
+### Desktop (> 1024px)
+- Títulos: 3rem (5xl)
+- Subtítulos: 1.875rem (3xl)
+- Texto: 1.125rem (lg)
+- Texto pequeno: 0.875rem (sm)
+
+## EFEITOS E ESTILOS DE TEXTO
+
+### Hierarquia
+- Títulos: font-bold tracking-tighter
+- Subtítulos: font-semibold
+- Destaques: font-medium text-blue-400 
+- Texto normal: font-normal
+- Texto de menor importância: text-muted-foreground ou text-gray-400
+
+### Interação
+- Links: hover:underline underline-offset-4
+- Botões: transições suaves em hover e focus
+
+## ELEMENTOS ESPECÍFICOS
+
+### Cards
+- Bordas: border border-zinc-800
+- Fundo: bg-[#252525]
+- Cantos: rounded-lg
+
+### Tags
+- Padrão: bg-zinc-900/60 text-gray-300 rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset ring-zinc-700
+- Botão "Ver mais": bg-indigo-900/70 ring-1 ring-inset ring-indigo-700 hover:bg-indigo-800/80
+
+### Botões
+- Primário: bg-primary hover:bg-primary/90 text-white
+- Outline: border border-white hover:bg-gray-700
+- WhatsApp: bg-teal-600 hover:bg-teal-700 text-white
