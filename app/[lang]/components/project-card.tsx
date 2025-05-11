@@ -97,7 +97,7 @@ export default function ProjectCard({
             {hasManyTags && (
               <button
                 onClick={() => setShowAllTags(!showAllTags)}
-                className="inline-flex items-center rounded-md bg-blue-900/60 backdrop-blur-sm px-2 py-1 text-xs font-medium text-blue-200 ring-1 ring-inset ring-blue-500/70 hover:bg-blue-800/70 cursor-pointer transition-all shadow-sm hover:shadow-blue-900/20 hover:shadow-md"
+                className="inline-flex items-center rounded-md bg-blue-900 px-2 py-1 text-xs font-medium text-blue-300 ring-1 ring-inset ring-blue-700 hover:bg-blue-800 cursor-pointer transition-colors"
               >
                 {showAllTags ? "Ver menos" : "Ver mais"}
               </button>
