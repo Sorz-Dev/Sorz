@@ -10,12 +10,13 @@ const inter = Inter({ subsets: ["latin"] })
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
   const messages = i18n.messages[params.lang]
   const locale = params.lang === "pt" ? "pt_BR" : "en_US"
+  const siteUrl = "https://sorz.com.br"
 
   return {
     title: messages.meta.title,
     description: messages.meta.description,
     keywords: messages.meta.keywords,
-    metadataBase: new URL("https://sorz.com.br"),
+    metadataBase: new URL(siteUrl),
     alternates: {
       canonical: `/${params.lang}`,
       languages: {
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     },
     openGraph: {
       type: "website",
-      url: `https://sorz.com.br/${params.lang}`,
+      url: `${siteUrl}/${params.lang}`,
       title: messages.meta.title,
       description: messages.meta.description,
       siteName: "Sorz",
@@ -44,6 +45,19 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       title: messages.meta.title,
       description: messages.meta.description,
       images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/og.png"],
+      creator: "@Sorz_dev",
+      site: "@Sorz_dev",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     icons: {
       icon: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
