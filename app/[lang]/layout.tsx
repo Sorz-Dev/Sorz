@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       siteName: "Sorz",
       images: [
         {
-          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png",
+          url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-IMFWPn3eh8JYSrQtejrjD6aBPiqXlJ.png",
           width: 1200,
           height: 630,
           alt: messages.meta.title,
@@ -43,7 +43,7 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
       card: "summary_large_image",
       title: messages.meta.title,
       description: messages.meta.description,
-      images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png"],
+      images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-IMFWPn3eh8JYSrQtejrjD6aBPiqXlJ.png"],
     },
     icons: {
       icon: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",

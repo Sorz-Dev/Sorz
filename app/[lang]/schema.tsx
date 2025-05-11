@@ -10,7 +10,7 @@ export function generateSchemaMarkup(lang: Locale) {
     url: "https://sorz.com.br",
     logo: {
       "@type": "ImageObject",
-      url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.png",
+      url: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-IMFWPn3eh8JYSrQtejrjD6aBPiqXlJ.png",
       width: 1200,
       height: 630,
     },
