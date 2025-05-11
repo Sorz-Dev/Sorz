@@ -1,7 +1,7 @@
 # Sorz - Desenvolvimento Digital
 
 <p align="center">
-  <img src="public/images/logo.webp" alt="Sorz Logo" width="300" />
+  <img src=https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/logo.webp" alt="Sorz Logo" width="300" />
 </p>
 
 ## 📋 Sobre a Empresa
