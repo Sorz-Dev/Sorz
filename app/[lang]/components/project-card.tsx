@@ -14,6 +14,7 @@ interface ProjectCardProps {
   github?: string | boolean
   viewWebsite: string
   viewGithub: string
+  isFirstCard?: boolean
 }
 
 export default function ProjectCard({
@@ -25,6 +26,7 @@ export default function ProjectCard({
   github = true,
   viewWebsite,
   viewGithub,
+  isFirstCard = false,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -57,18 +59,13 @@ export default function ProjectCard({
       <Card className="overflow-hidden border border-gray-800 bg-[#252525]">
         <Link href={link} target="_blank">
           <div className="scroll-preview h-48 rounded-lg overflow-hidden">
-            {/* Adicionando width e height explícitos para melhorar CLS */}
             <img
               src={image || "/placeholder.svg"}
               alt={title}
               className="w-full object-top"
-              loading="lazy"
-              width="600"
-              height="300"
-              // Corrigido: fetchPriority com P maiúsculo (camelCase)
-              {...(title === "Ecossistema Delivery WebApp"
-                ? { loading: "eager", fetchPriority: "high" }
-                : { loading: "lazy" })}
+              loading={isFirstCard ? "eager" : "lazy"}
+              width="768"
+              height="384"
             />
           </div>
         </Link>
