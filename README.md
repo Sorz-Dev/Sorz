@@ -76,15 +76,6 @@ Este projeto demonstra nossa capacidade de desenvolver soluções completas e es
 Este código não é licenciado para uso, modificação ou distribuição. Todos os direitos reservados.
 O repositório está público apenas para permitir a visualização do código como parte de um portfólio profissional.
 
-## 📞 Contato
-
-Para questões, sugestões ou colaborações, entre em contato:
-
-- Email: soarxz.dev@gmail.com
-- WhatsApp: +55 19 99881-7808
-- [LinkedIn](https://www.linkedin.com/in/bruno-soares-7885311b2/)
-- [GitHub](https://github.com/Sorz-Dev)
-
 ---
 
 <p align="center">
@@ -170,15 +161,6 @@ This project demonstrates our ability to develop complete and scalable solutions
 
 This code is not licensed for use, modification, or distribution. All rights reserved.
 The repository is public only to allow viewing of the code as part of a professional portfolio.
-
-## 📞 Contact
-
-For questions, suggestions, or collaborations, please contact:
-
-- Email: soarxz.dev@gmail.com
-- WhatsApp: +55 19 99881-7808
-- [LinkedIn](https://www.linkedin.com/in/bruno-soares-7885311b2/)
-- [GitHub](https://github.com/Sorz-Dev)
 
 ---
 
