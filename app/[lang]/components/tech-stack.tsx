@@ -20,7 +20,18 @@ export default function TechStack({ categories }: TechStackProps) {
   const technologies = [
     {
       category: categories.frontend,
-      skills: ["React", "Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"],
+      skills: [
+        "React",
+        "Next.js",
+        "React Native",
+        "Expo",
+        "NativeWind",
+        "JavaScript",
+        "TypeScript",
+        "Tailwind CSS",
+        "HTML5",
+        "CSS3",
+      ],
     },
     {
       category: categories.backend,

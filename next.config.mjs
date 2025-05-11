@@ -71,6 +71,11 @@ const nextConfig = {
       ],
     },
   ],
+  // Desabilitar a geração de PWA
+  experimental: {
+    disableStaticImages: false,
+    // Desabilitar qualquer configuração experimental relacionada a PWA
+  },
 }
 
 export default nextConfig

@@ -1,10 +1,10 @@
 export const messages = {
   meta: {
-    title: "Sorz - Desenvolvimento Digital",
+    title: "Sorz - Desenvolvimento Digital | Sites, Apps e WebApps em Campinas",
     description:
-      "Empresa especializada em desenvolvimento de sites, web apps (PWA) e aplicativos nativos em Campinas, SP. Soluções digitais modernas e eficientes para o seu negócio.",
+      "Empresa especializada em desenvolvimento de sites, web apps (PWA), aplicativos nativos com React Native e soluções digitais em Campinas, SP. Freelance de desenvolvimento web e mobile para o seu negócio.",
     keywords:
-      "desenvolvimento web, desenvolvimento de aplicativos, PWA, sites responsivos, aplicativos nativos, desenvolvimento digital, Sorz, Campinas, São Paulo",
+      "desenvolvimento web, desenvolvimento de aplicativos, React Native, Expo, NativeWind, PWA, sites responsivos, aplicativos nativos, desenvolvimento digital, freelance, Sorz, Campinas, São Paulo, desenvolvimento de sites, desenvolvimento de apps, desenvolvimento de webapps",
     location: "Campinas, São Paulo",
   },
   nav: {
@@ -17,7 +17,7 @@ export const messages = {
   hero: {
     title: "Desenvolvimento Digital",
     description:
-      "Criamos soluções digitais modernas e eficientes. Desenvolvemos sites, web apps (PWA) e aplicativos nativos que resolvem problemas reais.",
+      "Criamos soluções digitais modernas e eficientes. Desenvolvemos sites, web apps (PWA) e aplicativos nativos com React Native que resolvem problemas reais. Serviços de freelance para empresas e startups em Campinas e região.",
   },
   projects: {
     title: "Projetos",
@@ -178,5 +178,33 @@ export const messages = {
         text: "Se você tiver alguma dúvida sobre esta Política de Privacidade, entre em contato conosco pelo e-mail: soarxz.dev@gmail.com",
       },
     ],
+  },
+  services: {
+    title: "Nossos Serviços",
+    webDevelopment: {
+      title: "Desenvolvimento Web",
+      description:
+        "Criação de sites responsivos, landing pages e aplicações web com as tecnologias mais modernas do mercado.",
+    },
+    mobileDevelopment: {
+      title: "Desenvolvimento Mobile",
+      description:
+        "Desenvolvimento de aplicativos nativos para iOS e Android utilizando React Native, Expo e NativeWind.",
+    },
+    webApps: {
+      title: "Web Apps (PWA)",
+      description:
+        "Criação de aplicativos web progressivos que funcionam offline e oferecem experiência similar a aplicativos nativos.",
+    },
+    ecommerce: {
+      title: "E-commerce",
+      description:
+        "Desenvolvimento de lojas virtuais completas com integração de pagamentos, gestão de estoque e painel administrativo.",
+    },
+    seo: {
+      title: "Otimização para SEO",
+      description:
+        "Estratégias de otimização para mecanismos de busca para melhorar o posicionamento do seu site no Google.",
+    },
   },
 }

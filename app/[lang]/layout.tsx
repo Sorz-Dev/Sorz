@@ -66,6 +66,26 @@ export async function generateMetadata({ params }: { params: { lang: Locale } })
     icons: {
       icon: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
     },
+    verification: {
+      google: "google-site-verification-code", // Substitua pelo seu código de verificação do Google
+    },
+    other: {
+      "geo.region": params.lang === "pt" ? "BR-SP" : "BR-SP",
+      "geo.placename": "Campinas",
+      "geo.position": "-22.9099;-47.0626",
+      ICBM: "-22.9099, -47.0626",
+      "place:location:latitude": "-22.9099",
+      "place:location:longitude": "-47.0626",
+      "business:contact_data:street_address": "Campinas",
+      "business:contact_data:locality": "Campinas",
+      "business:contact_data:postal_code": "13041-000",
+      "business:contact_data:country_name": "Brasil",
+      "business:contact_data:email": "soarxz.dev@gmail.com",
+      "business:contact_data:phone_number": "+5519998817808",
+      "business:hours:day": "mon,tue,wed,thu,fri,sat",
+      "business:hours:start": "09:00",
+      "business:hours:end": "21:00",
+    },
   }
 }
 

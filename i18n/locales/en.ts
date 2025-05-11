@@ -1,10 +1,10 @@
 export const messages = {
   meta: {
-    title: "Sorz - Digital Development",
+    title: "Sorz - Digital Development | Websites, Apps and WebApps in Campinas",
     description:
-      "Company specialized in developing websites, web apps (PWA) and native applications in Campinas, Brazil. Modern and efficient digital solutions for your business.",
+      "Company specialized in developing websites, web apps (PWA), native applications with React Native and digital solutions in Campinas, Brazil. Freelance web and mobile development for your business.",
     keywords:
-      "web development, app development, PWA, responsive websites, native applications, digital development, Sorz, Campinas, São Paulo, Brazil",
+      "web development, app development, React Native, Expo, NativeWind, PWA, responsive websites, native applications, digital development, freelance, Sorz, Campinas, São Paulo, Brazil, website development, app development, webapp development",
     location: "Campinas, São Paulo, Brazil",
   },
   nav: {
@@ -17,7 +17,7 @@ export const messages = {
   hero: {
     title: "Digital Development",
     description:
-      "We create modern and efficient digital solutions. We develop websites, web apps (PWA) and native applications that solve real problems.",
+      "We create modern and efficient digital solutions. We develop websites, web apps (PWA) and native applications with React Native that solve real problems. Freelance services for companies and startups in Campinas and region.",
   },
   projects: {
     title: "Projects",
@@ -184,5 +184,31 @@ export const messages = {
     description: "Manage your cookie and privacy preferences",
     cookiePreferences: "Cookie Preferences",
     save: "Save Settings",
+  },
+  services: {
+    title: "Our Services",
+    webDevelopment: {
+      title: "Web Development",
+      description:
+        "Creation of responsive websites, landing pages and web applications with the most modern technologies on the market.",
+    },
+    mobileDevelopment: {
+      title: "Mobile Development",
+      description: "Development of native applications for iOS and Android using React Native, Expo and NativeWind.",
+    },
+    webApps: {
+      title: "Web Apps (PWA)",
+      description:
+        "Creation of progressive web applications that work offline and offer an experience similar to native applications.",
+    },
+    ecommerce: {
+      title: "E-commerce",
+      description:
+        "Development of complete online stores with payment integration, inventory management and administrative panel.",
+    },
+    seo: {
+      title: "SEO Optimization",
+      description: "Search engine optimization strategies to improve your website's ranking on Google.",
+    },
   },
 }
