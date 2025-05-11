@@ -15,7 +15,7 @@ const nextConfig = {
   },
   // Habilitar Skew Protection
   experimental: {
-    skewProtection: true,
+    timeoutProtection: true,
   },
   // Removido output: 'export' para voltar ao modo SSG
 }
