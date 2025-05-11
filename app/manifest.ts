@@ -14,6 +14,24 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg",
         sizes: "any",
         type: "image/svg+xml",
+        purpose: "any maskable",
+      },
+    ],
+    categories: ["business", "productivity", "web development"],
+    lang: "pt-BR",
+    dir: "ltr",
+    orientation: "portrait",
+    prefer_related_applications: false,
+    shortcuts: [
+      {
+        name: "Contato",
+        url: "/pt#contact",
+        description: "Entre em contato conosco",
+      },
+      {
+        name: "Projetos",
+        url: "/pt#projects",
+        description: "Veja nossos projetos",
       },
     ],
   }

@@ -202,7 +202,6 @@ export default function ClientPage({ params }: { params: { lang: Locale } }) {
                 github={false}
                 viewWebsite={t.projects.viewWebsite}
                 viewGithub={t.projects.viewGithub}
-                isFirstCard={true}
               />
               <ProjectCard
                 title={t.projects.items[1].title}

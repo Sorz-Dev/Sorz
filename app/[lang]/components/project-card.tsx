@@ -3,6 +3,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Github } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
 
 interface ProjectCardProps {
@@ -14,7 +15,6 @@ interface ProjectCardProps {
   github?: string | boolean
   viewWebsite: string
   viewGithub: string
-  isFirstCard?: boolean
 }
 
 export default function ProjectCard({
@@ -26,7 +26,6 @@ export default function ProjectCard({
   github = true,
   viewWebsite,
   viewGithub,
-  isFirstCard = false,
 }: ProjectCardProps) {
   const cardRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
@@ -59,13 +58,14 @@ export default function ProjectCard({
       <Card className="overflow-hidden border border-gray-800 bg-[#252525]">
         <Link href={link} target="_blank">
           <div className="scroll-preview h-48 rounded-lg overflow-hidden">
-            <img
+            <Image
               src={image || "/placeholder.svg"}
               alt={title}
+              width={600}
+              height={300}
               className="w-full object-top"
-              loading={isFirstCard ? "eager" : "lazy"}
-              width="768"
-              height="384"
+              priority={image.includes("delivery")} // Prioriza a imagem do LCP
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </Link>

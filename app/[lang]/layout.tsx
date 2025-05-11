@@ -5,7 +5,13 @@ import { i18n, type Locale } from "@/i18n"
 import "../globals.css"
 import type React from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+// Otimização: Carregamento de fonte com display swap
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-inter",
+})
 
 export async function generateMetadata({ params }: { params: { lang: Locale } }): Promise<Metadata> {
   const messages = i18n.messages[params.lang]
@@ -76,6 +82,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang} className="dark">
+      <head>
+        {/* Preconectar a domínios externos */}
+        <link rel="preconnect" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" />
+        <link rel="dns-prefetch" href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com" />
+      </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
       </body>

@@ -3,6 +3,7 @@ import { i18n } from "@/i18n"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://sorz.com.br"
+  const lastModified = new Date()
 
   const routes = ["", "/privacy", "/terms", "/privacy-settings"]
 
@@ -13,8 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const route of routes) {
       sitemap.push({
         url: `${baseUrl}/${locale}${route}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly",
+        lastModified,
+        changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1 : 0.8,
       })
     }

@@ -10,21 +10,67 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    unoptimized: true,
+    minimumCacheTTL: 31536000, // 1 ano em segundos
   },
-  // Removido swcMinify que não é mais reconhecido no Next.js 15
-  compiler: {
-    removeConsole: true,
-  },
+  // Otimizações de performance
   poweredByHeader: false,
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['lucide-react', '@headlessui/react'],
-    // Removido timeoutProtection que não é reconhecido
-    serverActions: {
-      bodySizeLimit: '2mb',
+  compress: true,
+  reactStrictMode: true,
+  swcMinify: true,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  // Cache e otimizações
+  staticPageGenerationTimeout: 120,
+  output: 'standalone',
+  // Configurações de cache HTTP
+  headers: async () => [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
     },
-  }
+    {
+      source: '/images/(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+    {
+      source: '/_next/image(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+    {
+      source: '/_next/static/(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+    {
+      source: '/api/(.*)',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'no-store, max-age=0',
+        },
+      ],
+    },
+  ],
 }
 
 export default nextConfig

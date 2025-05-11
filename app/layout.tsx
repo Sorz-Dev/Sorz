@@ -4,13 +4,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import type React from "react"
 
-// Otimizando o carregamento de fontes
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap", // Usar 'swap' para evitar texto invisível durante o carregamento
-  preload: true,
-  fallback: ["system-ui", "sans-serif"],
-})
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Sorz - Desenvolvimento Web",
@@ -40,18 +34,6 @@ export const metadata: Metadata = {
     description: "Portfólio de projetos de desenvolvimento web da Sorz",
     images: ["https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/og.png"],
   },
-  // Adicionando verificação para motores de busca
-  verification: {
-    google: "google-site-verification=ADICIONE_SEU_CÓDIGO_AQUI",
-  },
-  // Adicionando outras meta tags importantes para SEO
-  alternates: {
-    canonical: "https://sorz.com.br",
-    languages: {
-      "pt-BR": "https://sorz.com.br/pt",
-      "en-US": "https://sorz.com.br/en",
-    },
-  },
     generator: 'v0.dev'
 }
 
@@ -62,19 +44,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className="dark">
-      <head>
-        {/* Preconectar a domínios de terceiros para melhorar o desempenho */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-
-        {/* Precarregar recursos críticos */}
-        <link
-          rel="preload"
-          href="https://d7hd88ngyqaw6jtz.public.blob.vercel-storage.com/Frame-1.svg"
-          as="image"
-          type="image/svg+xml"
-        />
-      </head>
       <body className={cn("min-h-screen bg-[#1d1d1d] text-foreground font-sans antialiased", inter.className)}>
         {children}
       </body>
