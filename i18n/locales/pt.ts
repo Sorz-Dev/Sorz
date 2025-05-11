@@ -179,10 +179,4 @@ export const messages = {
       },
     ],
   },
-  privacySettings: {
-    title: "Configurações de Privacidade",
-    description: "Gerencie suas preferências de cookies e privacidade",
-    cookiePreferences: "Preferências de Cookies",
-    save: "Salvar Configurações",
-  },
 }

@@ -179,12 +179,6 @@ export const messages = {
       },
     ],
   },
-  privacySettings: {
-    title: "Privacy Settings",
-    description: "Manage your cookie and privacy preferences",
-    cookiePreferences: "Cookie Preferences",
-    save: "Save Settings",
-  },
   tech: {
     title: "Technologies",
     categories: {
