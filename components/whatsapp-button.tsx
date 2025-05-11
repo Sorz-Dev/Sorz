@@ -29,7 +29,7 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
 
     const handleScroll = () => {
       // Mostrar o botão após um scroll mínimo (reduzido para aparecer mais cedo)
-      if (window.scrollY > 100) {
+      if (window.scrollY > 40) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -41,8 +41,7 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
       const scrollPosition = window.scrollY + windowHeight
 
       // Ajustado: Reduzir a margem para que o botão suba apenas quando estiver muito próximo ao rodapé
-      // Usando 60px como margem (altura aproximada do rodapé)
-      const footerThreshold = 60
+      const footerThreshold = 20
 
       // Se estiver próximo ao rodapé, ajustar a posição
       if (documentHeight - scrollPosition < footerThreshold) {
@@ -86,7 +85,7 @@ export function WhatsAppButton({ locale }: WhatsAppButtonProps) {
 
   return (
     <div
-      className={`fixed z-50 transition-all duration-700 ${
+      className={`fixed z-50 transition-all duration-300 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       } ${isNearFooter ? "bottom-24 md:bottom-20" : "bottom-6"} right-6`}
     >
