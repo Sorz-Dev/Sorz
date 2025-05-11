@@ -91,7 +91,7 @@ export const messages = {
       "Utilizamos cookies para melhorar sua experiência de navegação, personalizar conteúdo e anúncios, e analisar nosso tráfego. Ao continuar navegando, você concorda com o uso de cookies.",
     accept: "Aceitar",
     reject: "Rejeitar",
-    privacyPolicy: "Saiba mais em nossa Política de Privacidade",
+    privacyPolicy: "Política de Privacidade",
     manage: "Gerenciar preferências",
     necessary: "Cookies necessários",
     necessaryDescription: "Estes cookies são essenciais para o funcionamento do site e não podem ser desativados.",

@@ -62,60 +62,6 @@ Este projeto demonstra nossa capacidade de desenvolver soluções completas e es
 - **Integração WhatsApp**: Botão flutuante para contato direto
 - **SEO Otimizado**: Implementação de Schema.org, meta tags e outras práticas recomendadas
 
-## 🛠️ Instalação e Uso
-
-### Pré-requisitos
-- Node.js 18.17.0 ou superior
-- pnpm (recomendado) ou npm
-
-### Instalação
-
-1. Clone o repositório
-   \`\`\`bash
-   git clone https://github.com/Sorz-Dev/Sorz.git
-   cd Sorz
-   \`\`\`
-
-2. Instale as dependências
-   \`\`\`bash
-   pnpm install
-   \`\`\`
-
-3. Execute o servidor de desenvolvimento
-   \`\`\`bash
-   pnpm dev
-   \`\`\`
-
-4. Abra [http://localhost:3000](http://localhost:3000) no seu navegador
-
-### Build para Produção
-
-\`\`\`bash
-pnpm build
-\`\`\`
-
-## 📁 Estrutura do Projeto
-
-\`\`\`
-Sorz/
-├── app/                  # Diretório principal do Next.js App Router
-│   ├── [lang]/           # Rotas dinâmicas para idiomas
-│   │   ├── components/   # Componentes específicos de página
-│   │   ├── privacy/      # Página de política de privacidade
-│   │   ├── terms/        # Página de termos de uso
-│   │   └── client-page.tsx # Componente principal do site
-│   └── globals.css       # Estilos globais
-├── components/           # Componentes reutilizáveis
-│   ├── ui/               # Componentes de UI (shadcn)
-│   ├── cookie-consent.tsx # Componente de consentimento de cookies
-│   └── whatsapp-button.tsx # Botão flutuante de WhatsApp
-├── i18n/                 # Configuração e arquivos de internacionalização
-│   └── locales/          # Traduções para cada idioma
-├── public/               # Arquivos estáticos
-│   └── images/           # Imagens do site
-└── middleware.ts         # Middleware para redirecionamento de idioma
-\`\`\`
-
 ## 🔒 Segurança
 
 - **Skew Protection**: Proteção contra desincronização de relógio
@@ -123,9 +69,12 @@ Sorz/
 - **HTTPS**: Forçado em todas as páginas
 - **Sanitização de Entrada**: Validação de dados de formulário
 
-## 📄 Licença
+## ⚠️ Aviso Legal
 
-Este projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+**Este repositório é apenas para fins de demonstração e portfólio profissional.**
+
+Este código não é licenciado para uso, modificação ou distribuição. Todos os direitos reservados.
+O repositório está público apenas para permitir a visualização do código como parte de um portfólio profissional.
 
 ## 📞 Contato
 

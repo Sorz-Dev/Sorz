@@ -91,7 +91,7 @@ export const messages = {
       "We use cookies to improve your browsing experience, personalize content and ads, and analyze our traffic. By continuing to browse, you agree to the use of cookies.",
     accept: "Accept",
     reject: "Reject",
-    privacyPolicy: "Learn more in our Privacy Policy",
+    privacyPolicy: "Privacy Policy",
     manage: "Manage preferences",
     necessary: "Necessary cookies",
     necessaryDescription: "These cookies are essential for the website to function and cannot be turned off.",
@@ -179,14 +179,10 @@ export const messages = {
       },
     ],
   },
-  tech: {
-    title: "Technologies",
-    categories: {
-      frontend: "Frontend",
-      backend: "Backend",
-      devops: "DevOps",
-      tools: "Tools",
-      marketing: "Marketing & Optimization",
-    },
+  privacySettings: {
+    title: "Privacy Settings",
+    description: "Manage your cookie and privacy preferences",
+    cookiePreferences: "Cookie Preferences",
+    save: "Save Settings",
   },
 }
