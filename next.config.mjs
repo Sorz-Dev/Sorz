@@ -12,20 +12,18 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     unoptimized: true,
   },
-  swcMinify: true,
+  // Removido swcMinify que não é mais reconhecido no Next.js 15
   compiler: {
-    removeConsole: true, // Remover todos os console.log em produção
+    removeConsole: true,
   },
   poweredByHeader: false,
-  // Removido reactStrictMode que é apenas para desenvolvimento
   experimental: {
     optimizeCss: true,
     optimizePackageImports: ['lucide-react', '@headlessui/react'],
-    // Adicionando mais otimizações para produção
+    // Removido timeoutProtection que não é reconhecido
     serverActions: {
-      bodySizeLimit: '2mb', // Limitar tamanho das requisições
+      bodySizeLimit: '2mb',
     },
-    timeoutProtection: true, // Proteção contra timeout
   }
 }
 
